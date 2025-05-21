@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portföy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <style>
+      body {
+        background-image: url("https://images.unsplash.com/photo-1516321310766-66f1d8731747?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        background-color: rgba(0, 0, 0, 0.7);
+        background-blend-mode: darken;
+      }
+      #hakkimda {
+        background-image: url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80");
+        background-size: cover;
+        background-position: center;
+        background-color: rgba(0, 0, 0, 0.6);
+        background-blend-mode: darken;
+      }
+      #menu-toggle {
+        display: none;
+      }
+      #menu {
+        display: flex;
+      }
+      @media (max-width: 768px) {
+        #menu-toggle {
+          display: block;
+        }
+        #menu {
+          display: none;
+          flex-direction: column;
+          position: absolute;
+          top: 64px;
+          right: 0;
+          background: #1f2937;
+          width: 100%;
+          padding: 1rem;
+        }
+        #menu.active {
+          display: flex;
+        }
+        #menu li {
+          margin: 0.5rem 0;
+        }
+      }
+    </style>
+  </head>
+  <body class="text-white font-sans">
+    <!-- Navbar -->
+    <nav class="bg-gray-800 p-4 sticky top-0 z-10">
+      <div class="container mx-auto flex justify-between items-center">
+        <h1 class="text-2xl font-bold">Portföyüm</h1>
+        <button id="menu-toggle" class="md:hidden text-white">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul id="menu" class="flex space-x-6 md:flex md:space-x-6">
+          <li><a href="#hakkimda" class="hover:text-green-400">Hakkımda</a></li>
+          <li><a href="#projeler" class="hover:text-green-400">Projeler</a></li>
+          <li><a href="#iletisim" class="hover:text-green-400">İletişim</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      id="hakkimda"
+      class="min-h-[80vh] flex items-center justify-center"
+    >
+      <div class="container mx-auto text-center px-4">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+          Merhaba, Ben Mustafa Çiftci
+        </h2>
+        <p class="text-base md:text-lg mb-6">
+          Freelance Web Yazılımcısıyım. Node.js, React, Laravel ve modern web
+          teknolojileriyle kullanıcı dostu ve performanslı çözümler sunuyorum.
+        </p>
+        <a
+          href="#projeler"
+          class="bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 text-sm md:text-base"
+          >Projelerimi Gör</a
+        >
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projeler" class="py-16 bg-gray-900/80">
+      <div class="container mx-auto px-4">
+        <h2 class="text-2xl md:text-3xl font-bold text-center mb-12">
+          Projelerim
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Proje 1 -->
+          <div
+            class="bg-gray-800 p-4 rounded-lg shadow-lg transition-transform hover:scale-105"
+          >
+            <img
+              src="./images/market.png"
+              alt="Proje 1"
+              class="w-full h-40 object-cover rounded-t-lg"
+            />
+            <h3 class="text-lg md:text-xl font-semibold mt-4">
+              Market Kasa ve Veresiye Uygulaması
+            </h3>
+            <p class="text-gray-400 mt-2 text-sm md:text-base">
+              Laravel ve Bootstrap ile geliştirilmiş bir POS ve borç takip
+              sistemi.
+            </p>
+            <p class="text-gray-500 mt-2 text-xs md:text-sm">
+              Teknolojiler: Laravel, MySQL, Bootstrap
+            </p>
+            <a
+              href="https://everesiyedefteri.com.tr/"
+              class="text-green-400 mt-4 inline-block text-sm md:text-base"
+              >Detaylar için link</a
+            >
+          </div>
+          <!-- Proje 2 -->
+          <div
+            class="bg-gray-800 p-4 rounded-lg shadow-lg transition-transform hover:scale-105"
+          >
+            <img
+              src="./images/stok.png"
+              alt="Proje 2"
+              class="w-full h-40 object-cover rounded-t-lg"
+            />
+            <h3 class="text-lg md:text-xl font-semibold mt-4">
+              E-Ticaret ile Stok Takip Platformu
+            </h3>
+            <p class="text-gray-400 mt-2 text-sm md:text-base">
+              Kullanıcı dostu bir e-ticaret sitesi, ödeme entegrasyonlarıyla.
+            </p>
+            <p class="text-gray-500 mt-2 text-xs md:text-sm">
+              Teknolojiler: Laravel, Bootstrap, İyzico
+            </p>
+            <a
+              href="https://proje.doguweb.com.tr/"
+              class="text-green-400 mt-4 inline-block text-sm md:text-base"
+              >Detaylar için link</a
+            >
+          </div>
+          <!-- Proje 3 -->
+          <div
+            class="bg-gray-800 p-4 rounded-lg shadow-lg transition-transform hover:scale-105"
+          >
+            <img
+              src="./images/egitim.png"
+              alt="Proje 3"
+              class="w-full h-40 object-cover rounded-t-lg"
+            />
+            <h3 class="text-lg md:text-xl font-semibold mt-4">Eğitim Sitesi</h3>
+            <p class="text-gray-400 mt-2 text-sm md:text-base">
+              Node.js ve React ile Dinamik Site
+            </p>
+            <p class="text-gray-500 mt-2 text-xs md:text-sm">
+              Teknolojiler: Node.js, React, Redux Toolkit, MongoDB
+            </p>
+            <a
+              href="https://www.linkedin.com/posts/mustafa-%C3%A7iftci-966b90262_arkada%C5%9Flar-merhaba-birka%C3%A7-ay-%C3%B6nce-yapt%C4%B1%C4%9F%C4%B1m-activity-7224393475696336897-V0BP?utm_source=share&utm_medium=member_desktop&rcm=ACoAAECaQl4BzOkuA-crOLRh9fdLsGlMbiwYGhA"
+              class="text-green-400 mt-4 inline-block text-sm md:text-base"
+              >Detaylar için link</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="iletisim" class="py-16 bg-gray-800/80">
+      <div class="container mx-auto px-4">
+        <h2 class="text-2xl md:text-3xl font-bold text-center mb-12">
+          İletişime Geç
+        </h2>
+        <form
+          action="https://formspree.io/f/mpwdealb"
+          method="POST"
+          class="max-w-lg mx-auto space-y-4"
+          id="contact-form"
+        >
+          <input
+            type="text"
+            name="name"
+            placeholder="Adınız"
+            class="w-full p-3 bg-gray-700 rounded-lg text-white text-sm md:text-base"
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="E-posta"
+            class="w-full p-3 bg-gray-700 rounded-lg text-white text-sm md:text-base"
+            required
+          />
+          <textarea
+            name="message"
+            placeholder="Mesajınız"
+            class="w-full p-3 bg-gray-700 rounded-lg text-white h-32 text-sm md:text-base"
+            required
+          ></textarea>
+          <input
+            type="hidden"
+            name="_to"
+            value="mciftci19891903@gmail.com"
+          />
+          <button
+            type="submit"
+            class="bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 text-sm md:text-base"
+          >
+            Gönder
+          </button>
+        </form>
+        <p id="form-message" class="text-center mt-4 hidden text-green-400">
+          Mesajınız başarıyla gönderildi!
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900/80 p-4 text-center">
+      <p class="mt-2">
+        E-posta: <a href="mailto:mciftci19891903@gmail.com" class="hover:text-green-400">mciftci19891903@gmail.com</a>
+      </p>
+      <p class="mt-2">
+        Telefon: <a href="tel:+905551234567" class="hover:text-green-400">+90 555 123 45 67</a>
+      </p>
+      <p id="footer-year"></p>
+
+      <div class="mt-2 flex justify-center space-x-4">
+        <a
+          href="https://www.linkedin.com/in/mustafa-%C3%A7iftci-966b90262/"
+          class="text-gray-400 hover:text-green-400"
+          ><i class="fab fa-linkedin fa-lg"></i
+        ></a>
+        <a
+          href="https://github.com/mustafaciftc"
+          class="text-gray-400 hover:text-green-400"
+          ><i class="fab fa-github fa-lg"></i
+        ></a>
+      </div>
+    </footer>
+
+    <script>
+      // Hamburger menu toggle
+      const menuToggle = document.getElementById("menu-toggle");
+      const menu = document.getElementById("menu");
+      menuToggle.addEventListener("click", () => {
+        menu.classList.toggle("active");
+        menuToggle.querySelector("i").classList.toggle("fa-bars");
+        menuToggle.querySelector("i").classList.toggle("fa-times");
+      });
+
+      // Smooth scrolling for nav links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+          if (menu.classList.contains("active")) {
+            menu.classList.remove("active");
+            menuToggle.querySelector("i").classList.toggle("fa-bars");
+            menuToggle.querySelector("i").classList.toggle("fa-times");
+          }
+        });
+      });
+
+      // Dynamic footer year
+      document.getElementById(
+        "footer-year"
+      ).innerText = `© ${new Date().getFullYear()} Mustafa Çiftci. Tüm hakları saklıdır.`;
+
+      // Form submission handling
+      const form = document.getElementById("contact-form");
+      const formMessage = document.getElementById("form-message");
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const response = await fetch(form.action, {
+          method: "POST",
+          body: new FormData(form),
+          headers: {
+            Accept: "application/json",
+          },
+        });
+        if (response.ok) {
+          formMessage.classList.remove("hidden");
+          form.reset();
+          setTimeout(() => formMessage.classList.add("hidden"), 3000);
+        } else {
+          alert("Mesaj gönderilirken bir hata oluştu. Lütfen tekrar deneyin.");
+        }
+      });
+    </script>
+  </body>
+</html>
