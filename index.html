@@ -339,7 +339,6 @@
     }
 
     .pricing-card.featured::after {
-      content: 'POPÜLER';
       position: absolute;
       top: 1rem;
       right: -2rem;
@@ -436,6 +435,18 @@
       margin-top: 3rem;
     }
 
+    #whatsapp-popup.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    #whatsapp-popup {
+      background: rgba(18, 26, 38, 0.95);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
     @media (min-width: 769px) {
       #menu-toggle {
         display: none;
@@ -477,6 +488,11 @@
       section {
         padding-top: 4rem;
         padding-bottom: 4rem;
+      }
+
+      #about {
+        position: relative;
+        bottom: 50px;
       }
 
       .min-h-screen {
@@ -1531,20 +1547,6 @@
       </div>
     </div>
   </div>
-
-  <style>
-    #whatsapp-popup.active {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-    }
-
-    #whatsapp-popup {
-      background: rgba(18, 26, 38, 0.95);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-  </style>
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
