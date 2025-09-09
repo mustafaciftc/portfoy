@@ -798,204 +798,303 @@
     </div>
   </section>
 
-  <section id="projects" class="py-20 reveal">
-    <div class="container mx-auto px-6">
-      <h2 class="text-4xl font-bold text-center mb-16 gradient-text">Projelerim</h2>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="glass rounded-2xl overflow-hidden hover-lift group">
+  <section id="projects" class="py-12 sm:py-20 reveal">
+    <div class="container mx-auto px-4 sm:px-6">
+      <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 sm:mb-16 gradient-text">Projelerim</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+        <div
+          class="glass rounded-2xl overflow-hidden hover-lift group shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-700/30 featured">
           <div class="relative">
-            <img src="./images/market.png" alt="Market Kasa Sistemi" class="w-full h-48 object-cover">
+            <img src="./images/market.png" alt="Market Kasa Sistemi" class="w-full h-40 sm:h-48 object-cover"
+              loading="lazy">
             <div
-              class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+              class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             </div>
-
-            <div class="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity">
-              <div class="flex space-x-2">
-                <span class="bg-red-500 text-xs px-2 py-1 rounded">Laravel</span>
-                <span class="bg-blue-500 text-xs px-2 py-1 rounded">MySQL</span>
+            <div class="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="tech-badge bg-red-500/20 text-red-400 font-semibold rounded-full hover:scale-105 transition-transform duration-200 text-xs sm:text-sm"><i
+                    class="fab fa-laravel mr-1" aria-hidden="true"></i>Laravel</span>
+                <span
+                  class="tech-badge bg-blue-500/20 text-blue-400 font-semibold rounded-full hover:scale-105 transition-transform duration-200 text-xs sm:text-sm"><i
+                    class="fas fa-database mr-1" aria-hidden="true"></i>MySQL</span>
+                <span
+                  class="tech-badge bg-green-500/20 text-green-400 font-semibold rounded-full hover:scale-105 transition-transform duration-200 text-xs sm:text-sm"><i
+                    class="fab fa-bootstrap mr-1" aria-hidden="true"></i>Bootstrap</span>
               </div>
             </div>
           </div>
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-3">Market POS & Veresiye Sistemi</h3>
-            <p class="text-gray-400 mb-4">Laravel ile geliştirilmiş kapsamlı POS sistemi. <strong
-                class="text-green-400">50+ aktif kullanıcı</strong>, günlük 200+ işlem kapasitesi.</p>
-            <div class="mb-4">
-              <div class="flex items-center space-x-2 mb-2">
-                <i class="fas fa-chart-line text-green-400"></i>
-                <span class="text-sm text-green-400">%45 stok yönetimi verimliliği artışı</span>
-              </div>
-              <div class="flex items-center space-x-2">
-                <i class="fas fa-clock text-blue-400"></i>
-                <span class="text-sm text-blue-400">%60 daha hızlı satış işlemleri</span>
+          <div class="p-4 sm:p-6">
+            <h3 class="text-lg sm:text-xl font-semibold mb-3 text-white">Market POS & Veresiye Sistemi</h3>
+            <p class="text-sm sm:text-base text-gray-400 mb-4 leading-relaxed">Laravel ile geliştirilmiş kapsamlı POS
+              sistemi. Stok yönetimi, satış raporlama ve veresiye takip özellikleri.</p>
+            <div class="case-study-section bg-gray-900/20 p-3 sm:p-4 rounded-lg">
+              <div class="case-study-title text-sm sm:text-base">Proje Detayları</div>
+              <div class="case-study-text text-gray-300 leading-relaxed text-xs sm:text-sm">
+                • Real-time stok takibi ve otomatik uyarı sistemi<br>
+                • Müşteri veresiye hesabı ve ödeme takibi<br>
+                • Günlük/aylık satış raporlama ve analitik<br>
+                • 4 farklı ödeme methodu
               </div>
             </div>
-            <div class="flex justify-between items-center">
+            <div class="stats-highlight grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 lg:gap-4">
+              <div class="stat-item bg-gray-800/50 rounded-lg p-2 sm:p-3 text-center">
+                <div class="number text-base sm:text-lg font-bold">50+</div>
+                <div class="label text-xs sm:text-sm uppercase">Aktif Kullanıcı</div>
+              </div>
+              <div class="stat-item bg-gray-800/50 rounded-lg p-2 sm:p-3 text-center">
+                <div class="number text-base sm:text-lg font-bold">200+</div>
+                <div class="label text-xs sm:text-sm uppercase">Günlük İşlem</div>
+              </div>
+              <div class="stat-item bg-gray-800/50 rounded-lg p-2 sm:p-3 text-center">
+                <div class="number text-base sm:text-lg font-bold">%45</div>
+                <div class="label text-xs sm:text-sm uppercase">Verimlilik</div>
+              </div>
+            </div>
+            <div class="demo-link-group flex items-center gap-3 sm:gap-5 mt-4">
               <a href="https://everesiyedefteri.com.tr/" target="_blank"
-                class="text-green-400 hover:text-green-300 transition-colors">
-                <i class="fas fa-external-link-alt mr-2"></i>Canlı Demo
+                class="text-green-400 hover:text-green-300 font-semibold transition-transform duration-200 hover:scale-105 text-sm sm:text-base"
+                aria-label="Market POS Sistemi Canlı Demo">
+                <i class="fas fa-external-link-alt mr-2" aria-hidden="true"></i>Canlı Demo
               </a>
             </div>
           </div>
         </div>
-
-        <div class="glass rounded-2xl overflow-hidden hover-lift group">
+        <div
+          class="glass rounded-2xl overflow-hidden hover-lift group shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-700/30">
           <div class="relative">
-            <img src="./images/stok.png" alt="E-Ticaret Platformu" class="w-full h-48 object-cover">
+            <img src="./images/stok.png" alt="E-Ticaret Platformu" class="w-full h-40 sm:h-48 object-cover"
+              loading="lazy">
             <div
-              class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+              class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             </div>
-
-            <div class="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity">
-              <div class="flex space-x-2">
-                <span class="bg-red-500 text-xs px-2 py-1 rounded">Laravel</span>
-                <span class="bg-green-500 text-xs px-2 py-1 rounded">Bootstrap</span>
-                <span class="bg-blue-500 text-xs px-2 py-1 rounded">MySQL</span>
+            <div class="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="tech-badge bg-red-500/20 text-red-400 font-semibold rounded-full hover:scale-105 transition-transform duration-200 text-xs sm:text-sm"><i
+                    class="fab fa-laravel mr-1" aria-hidden="true"></i>Laravel</span>
+                <span
+                  class="tech-badge bg-green-500/20 text-green-400 font-semibold rounded-full hover:scale-105 transition-transform duration-200 text-xs sm:text-sm"><i
+                    class="fab fa-bootstrap mr-1" aria-hidden="true"></i>Bootstrap</span>
+                <span
+                  class="tech-badge bg-blue-500/20 text-blue-400 font-semibold rounded-full hover:scale-105 transition-transform duration-200 text-xs sm:text-sm"><i
+                    class="fas fa-credit-card mr-1" aria-hidden="true"></i>İyzico API</span>
               </div>
             </div>
           </div>
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-3">E-Ticaret & Stok Takip Platformu</h3>
-            <p class="text-gray-400 mb-4">Kullanıcı dostu e-ticaret platformu. <strong class="text-green-400">İyzico
-                entegrasyonu</strong> ile %100 güvenli ödeme, stok yönetimi ve <strong class="text-blue-400">aylık 500+
-                sipariş</strong> kapasitesi.</p>
-            <div class="mb-4">
-              <div class="flex items-center space-x-2 mb-2">
-                <i class="fas fa-chart-line text-green-400"></i>
-                <span class="text-sm text-green-400">%50 sipariş işleme hızı artışı</span>
-              </div>
-              <div class="flex items-center space-x-2">
-                <i class="fas fa-clock text-blue-400"></i>
-                <span class="text-sm text-blue-400">2 saniye altında sayfa yükleme</span>
+          <div class="p-4 sm:p-6">
+            <h3 class="text-lg sm:text-xl font-semibold mb-3 text-white">E-Ticaret & Stok Takip Platformu</h3>
+            <p class="text-sm sm:text-base text-gray-400 mb-4 leading-relaxed">Kapsamlı e-ticaret çözümü. İyzico ödeme
+              entegrasyonu, admin paneli ve gelişmiş stok yönetimi.</p>
+            <div class="case-study-section bg-gray-900/20 p-3 sm:p-4 rounded-lg">
+              <div class="case-study-title text-sm sm:text-base">Teknik Özellikler</div>
+              <div class="case-study-text text-gray-300 leading-relaxed text-xs sm:text-sm">
+                • İyzico ödeme sistemi entegrasyonu<br>
+                • Otomatik stok uyarı sistemi<br>
+                • Müşteri sipariş takip paneli<br>
+                • SEO optimizasyonu ve hız iyileştirmeleri
               </div>
             </div>
-            <div class="flex justify-between items-center">
+            <div class="stats-highlight grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 lg:gap-4">
+              <div class="stat-item bg-gray-800/50 rounded-lg p-2 sm:p-3 text-center">
+                <div class="number text-base sm:text-lg font-bold">500+</div>
+                <div class="label text-xs sm:text-sm uppercase">Aylık Sipariş</div>
+              </div>
+              <div class="stat-item bg-gray-800/50 rounded-lg p-2 sm:p-3 text-center">
+                <div class="number text-base sm:text-lg font-bold">%100</div>
+                <div class="label text-xs sm:text-sm uppercase">Güvenli Ödeme</div>
+              </div>
+              <div class="stat-item bg-gray-800/50 rounded-lg p-2 sm:p-3 text-center">
+                <div class="number text-base sm:text-lg font-bold">2sn</div>
+                <div class="label text-xs sm:text-sm uppercase">Yükleme</div>
+              </div>
+            </div>
+            <div class="demo-link-group flex items-center gap-3 sm:gap-5 mt-4">
               <a href="https://proje.doguweb.com.tr/" target="_blank"
-                class="text-green-400 hover:text-green-300 transition-colors">
-                <i class="fas fa-external-link-alt mr-2"></i>Canlı Demo
+                class="text-green-400 hover:text-green-300 font-semibold transition-transform duration-200 hover:scale-105 text-sm sm:text-base"
+                aria-label="E-Ticaret Platformu Canlı Demo">
+                <i class="fas fa-external-link-alt mr-2" aria-hidden="true"></i>Canlı Demo
               </a>
             </div>
           </div>
         </div>
-
-        <div class="glass rounded-2xl overflow-hidden hover-lift group">
+        <div
+          class="glass rounded-2xl overflow-hidden hover-lift group shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-700/30">
           <div class="relative">
-            <img src="./images/forma.png" alt="Forma Satış Uygulaması" class="w-full h-48 object-cover">
+            <img src="./images/forma.png" alt="Forma Satış Uygulaması" class="w-full h-40 sm:h-48 object-cover"
+              loading="lazy">
             <div
-              class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+              class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             </div>
-
-            <div class="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity">
-              <div class="flex space-x-2">
-                <span class="bg-red-500 text-xs px-2 py-1 rounded">Laravel</span>
-                <span class="bg-yellow-500 text-xs px-2 py-1 rounded">Blade</span>
-                <span class="bg-blue-500 text-xs px-2 py-1 rounded">MySQL</span>
+            <div class="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="tech-badge bg-red-500/20 text-red-400 font-semibold rounded-full hover:scale-105 transition-transform duration-200 text-xs sm:text-sm"><i
+                    class="fab fa-laravel mr-1" aria-hidden="true"></i>Laravel</span>
+                <span
+                  class="tech-badge bg-yellow-500/20 text-yellow-400 font-semibold rounded-full hover:scale-105 transition-transform duration-200 text-xs sm:text-sm"><i
+                    class="fab fa-google mr-1" aria-hidden="true"></i>Google Auth</span>
+                <span
+                  class="tech-badge bg-blue-500/20 text-blue-400 font-semibold rounded-full hover:scale-105 transition-transform duration-200 text-xs sm:text-sm"><i
+                    class="fas fa-globe mr-1" aria-hidden="true"></i>Multi-Language</span>
               </div>
             </div>
           </div>
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-3">Forma Satış Platformu</h3>
-            <p class="text-gray-400 mb-4">Çok dilli forma satış platformu. <strong class="text-green-400">Google
-                girişi</strong> ve İyzico entegrasyonu ile <strong class="text-blue-400">3 dilde hizmet</strong>
-              sunuyor.</p>
-            <div class="mb-4">
-              <div class="flex items-center space-x-2 mb-2">
-                <i class="fas fa-globe text-green-400"></i>
-                <span class="text-sm text-green-400">3x daha geniş müşteri erişimi</span>
-              </div>
-              <div class="flex items-center space-x-2">
-                <i class="fas fa-shield-alt text-blue-400"></i>
-                <span class="text-sm text-blue-400">%100 güvenli ödeme işlemleri</span>
+          <div class="p-4 sm:p-6">
+            <h3 class="text-lg sm:text-xl font-semibold mb-3 text-white">Çok Dilli Forma Satış Platformu</h3>
+            <p class="text-sm sm:text-base text-gray-400 mb-4 leading-relaxed">2 dilde hizmet veren forma satış
+              platformu. Google OAuth ve güvenli ödeme sistemi entegrasyonu.</p>
+            <div class="case-study-section bg-gray-900/20 p-3 sm:p-4 rounded-lg">
+              <div class="case-study-title text-sm sm:text-base">Platform Özellikleri</div>
+              <div class="case-study-text text-gray-300 leading-relaxed text-xs sm:text-sm">
+                • Türkçe, İngilizce dil desteği<br>
+                • Google OAuth ile kolay üyelik sistemi<br>
+                • Responsive tasarım ve mobil uyumluluk<br>
+                • Admin paneli ve sipariş yönetimi
               </div>
             </div>
-            <div class="flex justify-between items-center">
+            <div class="stats-highlight grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 lg:gap-4">
+              <div class="stat-item bg-gray-800/50 rounded-lg p-2 sm:p-3 text-center">
+                <div class="number text-base sm:text-lg font-bold">2</div>
+                <div class="label text-xs sm:text-sm uppercase">Dil Desteği</div>
+              </div>
+              <div class="stat-item bg-gray-800/50 rounded-lg p-2 sm:p-3 text-center">
+                <div class="number text-base sm:text-lg font-bold">%100</div>
+                <div class="label text-xs sm:text-sm uppercase">Mobil Uyumlu</div>
+              </div>
+              <div class="stat-item bg-gray-800/50 rounded-lg p-2 sm:p-3 text-center">
+                <div class="number text-base sm:text-lg font-bold">OAuth</div>
+                <div class="label text-xs sm:text-sm uppercase">Google Login</div>
+              </div>
+            </div>
+            <div class="demo-link-group flex items-center gap-3 sm:gap-5 mt-4">
               <a href="https://satisformasi.doguweb.com.tr/" target="_blank"
-                class="text-green-400 hover:text-green-300 transition-colors">
-                <i class="fas fa-external-link-alt mr-2"></i>Canlı Demo
+                class="text-green-400 hover:text-green-300 font-semibold transition-transform duration-200 hover:scale-105 text-sm sm:text-base"
+                aria-label="Forma Satış Platformu Canlı Demo">
+                <i class="fas fa-external-link-alt mr-2" aria-hidden="true"></i>Canlı Demo
               </a>
             </div>
           </div>
         </div>
-
-        <div class="glass rounded-2xl overflow-hidden hover-lift group">
+        <div
+          class="glass rounded-2xl overflow-hidden hover-lift group shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-700/30">
           <div class="relative">
-            <img src="./images/fikirmax.png" alt="Dijital Pazarlama Tanıtım Sitesi" class="w-full h-48 object-cover">
+            <img src="./images/fikirmax.png" alt="Dijital Pazarlama Tanıtım Sitesi"
+              class="w-full h-40 sm:h-48 object-cover" loading="lazy">
             <div
-              class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+              class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             </div>
-
-            <div class="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity">
-              <div class="flex space-x-2">
-                <span class="bg-red-500 text-xs px-2 py-1 rounded">Html</span>
-                <span class="bg-yellow-500 text-xs px-2 py-1 rounded">JavaScript</span>
-                <span class="bg-green-500 text-xs px-2 py-1 rounded">Tailwind CSS</span>
+            <div class="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="tech-badge bg-red-500/20 text-red-400 font-semibold rounded-full hover:scale-105 transition-transform duration-200 text-xs sm:text-sm"><i
+                    class="fab fa-html5 mr-1" aria-hidden="true"></i>HTML5</span>
+                <span
+                  class="tech-badge bg-yellow-500/20 text-yellow-400 font-semibold rounded-full hover:scale-105 transition-transform duration-200 text-xs sm:text-sm"><i
+                    class="fab fa-js mr-1" aria-hidden="true"></i>JavaScript</span>
+                <span
+                  class="tech-badge bg-green-500/20 text-green-400 font-semibold rounded-full hover:scale-105 transition-transform duration-200 text-xs sm:text-sm"><i
+                    class="fas fa-wind mr-1" aria-hidden="true"></i>Tailwind CSS</span>
               </div>
             </div>
           </div>
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-3">Dijital Pazarlama Sitesi</h3>
-            <p class="text-gray-400 mb-4">Modern ve şık tanıtım sitesi.<strong class="text-green-400"> Duyarlı
-                tasarım.</strong></p>
-            <div class="mb-4">
-              <div class="flex items-center space-x-2 mb-2">
-                <i class="fas fa-rocket text-green-400"></i>
-                <span class="text-sm text-green-400">%30 organik trafik artışı</span>
-              </div>
-              <div class="flex items-center space-x-2">
-                <i class="fas fa-mobile-alt text-blue-400"></i>
-                <span class="text-sm text-blue-400">Tam mobil uyumluluk</span>
+          <div class="p-4 sm:p-6">
+            <h3 class="text-lg sm:text-xl font-semibold mb-3 text-white">Dijital Pazarlama Ajansı Sitesi</h3>
+            <p class="text-sm sm:text-base text-gray-400 mb-4 leading-relaxed">Modern tasarım ile dijital pazarlama
+              hizmetleri tanıtım sitesi. SEO optimizasyonu ve hızlı yükleme.</p>
+            <div class="case-study-section bg-gray-900/20 p-3 sm:p-4 rounded-lg">
+              <div class="case-study-title text-sm sm:text-base">Tasarım ve Performans</div>
+              <div class="case-study-text text-gray-300 leading-relaxed text-xs sm:text-sm">
+                • Modern ve şık kullanıcı arayüzü<br>
+                • Google PageSpeed 95+ skoru<br>
+                • Tam responsive tasarım<br>
+                • İletişim formu ve CTA optimizasyonu
               </div>
             </div>
-            <div class="flex justify-between items-center">
+            <div class="stats-highlight grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 lg:gap-4">
+              <div class="stat-item bg-gray-800/50 rounded-lg p-2 sm:p-3 text-center">
+                <div class="number text-base sm:text-lg font-bold">95+</div>
+                <div class="label text-xs sm:text-sm uppercase">PageSpeed</div>
+              </div>
+              <div class="stat-item bg-gray-800/50 rounded-lg p-2 sm:p-3 text-center">
+                <div class="number text-base sm:text-lg font-bold">%30</div>
+                <div class="label text-xs sm:text-sm uppercase">Trafik Artışı</div>
+              </div>
+              <div class="stat-item bg-gray-800/50 rounded-lg p-2 sm:p-3 text-center">
+                <div class="number text-base sm:text-lg font-bold">100%</div>
+                <div class="label text-xs sm:text-sm uppercase">Responsive</div>
+              </div>
+            </div>
+            <div class="demo-link-group flex items-center gap-3 sm:gap-5 mt-4">
               <a href="https://fikirmax.com" target="_blank"
-                class="text-green-400 hover:text-green-300 transition-colors">
-                <i class="fas fa-external-link-alt mr-2"></i>Canlı Demo
+                class="text-green-400 hover:text-green-300 font-semibold transition-transform duration-200 hover:scale-105 text-sm sm:text-base"
+                aria-label="Dijital Pazarlama Sitesi Canlı Demo">
+                <i class="fas fa-external-link-alt mr-2" aria-hidden="true"></i>Canlı Demo
               </a>
             </div>
           </div>
         </div>
-
-        <div class="glass rounded-2xl overflow-hidden hover-lift group">
+        <div
+          class="glass rounded-2xl overflow-hidden hover-lift group shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-700/30">
           <div class="relative">
-            <img src="./images/tayff.png" alt="Materyal Satış Tanıtım Sitesi" class="w-full h-48 object-cover">
+            <img src="./images/tayff.png" alt="Materyal Satış Tanıtım Sitesi" class="w-full h-40 sm:h-48 object-cover"
+              loading="lazy">
             <div
-              class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+              class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             </div>
-
-            <div class="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity">
-              <div class="flex space-x-2">
-                <span class="bg-red-500 text-xs px-2 py-1 rounded">Html</span>
-                <span class="bg-yellow-500 text-xs px-2 py-1 rounded">JavaScript</span>
-                <span class="bg-green-500 text-xs px-2 py-1 rounded">Tailwind CSS</span>
+            <div class="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="tech-badge bg-red-500/20 text-red-400 font-semibold rounded-full hover:scale-105 transition-transform duration-200 text-xs sm:text-sm"><i
+                    class="fab fa-html5 mr-1" aria-hidden="true"></i>HTML5</span>
+                <span
+                  class="tech-badge bg-yellow-500/20 text-yellow-400 font-semibold rounded-full hover:scale-105 transition-transform duration-200 text-xs sm:text-sm"><i
+                    class="fab fa-js mr-1" aria-hidden="true"></i>JavaScript</span>
+                <span
+                  class="tech-badge bg-green-500/20 text-green-400 font-semibold rounded-full hover:scale-105 transition-transform duration-200 text-xs sm:text-sm"><i
+                    class="fas fa-wind mr-1" aria-hidden="true"></i>Tailwind CSS</span>
               </div>
             </div>
           </div>
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-3">Materyal Satış Platformu</h3>
-            <p class="text-gray-400 mb-4">Profesyonel materyal tanıtım sitesi. <strong class="text-green-400">Duyarlı
-                tasarım</strong>.</p>
-            <div class="mb-4">
-              <div class="flex items-center space-x-2 mb-2">
-                <i class="fas fa-shopping-cart text-green-400"></i>
-                <span class="text-sm text-green-400">%35 sipariş dönüşüm artışı</span>
-              </div>
-              <div class="flex items-center space-x-2">
-                <i class="fas fa-clock text-blue-400"></i>
-                <span class="text-sm text-blue-400">Hızlı yükleme süreleri</span>
+          <div class="p-4 sm:p-6">
+            <h3 class="text-lg sm:text-xl font-semibold mb-3 text-white">Endüstriyel Materyal Sitesi</h3>
+            <p class="text-sm sm:text-base text-gray-400 mb-4 leading-relaxed">Profesyonel materyal tanıtım ve satış
+              platformu. Katalog görünümü ve iletişim entegrasyonu.</p>
+            <div class="case-study-section bg-gray-900/20 p-3 sm:p-4 rounded-lg">
+              <div class="case-study-title text-sm sm:text-base">İş Çözümleri</div>
+              <div class="case-study-text text-gray-300 leading-relaxed text-xs sm:text-sm">
+                • Ürün katalog sistemi<br>
+                • Fiyat teklifi formu entegrasyonu<br>
+                • Kategori bazlı ürün filtreleme<br>
+                • Müşteri iletişim paneli
               </div>
             </div>
-            <div class="flex justify-between items-center">
+            <div class="stats-highlight grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 lg:gap-4">
+              <div class="stat-item bg-gray-800/50 rounded-lg p-2 sm:p-3 text-center">
+                <div class="number text-base sm:text-lg font-bold">%35</div>
+                <div class="label text-xs sm:text-sm uppercase">Dönüşüm</div>
+              </div>
+              <div class="stat-item bg-gray-800/50 rounded-lg p-2 sm:p-3 text-center">
+                <div class="number text-base sm:text-lg font-bold">Fast</div>
+                <div class="label text-xs sm:text-sm uppercase">Yükleme</div>
+              </div>
+              <div class="stat-item bg-gray-800/50 rounded-lg p-2 sm:p-3 text-center">
+                <div class="number text-base sm:text-lg font-bold">SEO</div>
+                <div class="label text-xs sm:text-sm uppercase">Optimized</div>
+              </div>
+            </div>
+            <div class="demo-link-group flex items-center gap-3 sm:gap-5 mt-4">
               <a href="https://tayff.com.tr" target="_blank"
-                class="text-green-400 hover:text-green-300 transition-colors">
-                <i class="fas fa-external-link-alt mr-2"></i>Canlı Demo
+                class="text-green-400 hover:text-green-300 font-semibold transition-transform duration-200 hover:scale-105 text-sm sm:text-base"
+                aria-label="Materyal Satış Sitesi Canlı Demo">
+                <i class="fas fa-external-link-alt mr-2" aria-hidden="true"></i>Canlı Demo
               </a>
             </div>
           </div>
         </div>
-
-        <div class="glass rounded-2xl overflow-hidden hover-lift group">
-          <div class="relative w-full h-48 bg-black overflow-hidden">
+        <div
+          class="glass rounded-2xl overflow-hidden hover-lift group shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-700/30">
+          <div class="relative w-full h-40 sm:h-48 bg-black overflow-hidden">
             <video
               class="w-full h-full object-cover relative z-10 transition-all duration-500 group-hover:scale-110 group-hover:brightness-110"
               muted loop preload="metadata" onmouseover="this.play()" onmouseout="this.pause()"
@@ -1008,168 +1107,177 @@
             <div
               class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-400 backdrop-blur-sm">
               <div
-                class="bg-white/25 backdrop-blur-md rounded-full p-4 border border-white/40 transition-all duration-300 group-hover:scale-110 shadow-2xl">
-                <i class="fas fa-play text-white text-2xl ml-1"></i>
+                class="bg-white/25 backdrop-blur-md rounded-full p-3 sm:p-4 border border-white/40 transition-all duration-300 group-hover:scale-110 shadow-2xl">
+                <i class="fas fa-play text-white text-xl sm:text-2xl ml-1" aria-hidden="true"></i>
               </div>
             </div>
-
             <div
               class="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-600 transform translate-y-4 group-hover:translate-y-0">
-              <div class="flex space-x-2 flex-wrap gap-2">
+              <div class="flex flex-wrap gap-2">
                 <span
-                  class="bg-blue-500/90 backdrop-blur-md text-white text-xs px-3 py-1.5 rounded-full font-semibold shadow-xl border border-blue-300/30 transition-all duration-300 delay-100">
-                  <i class="fab fa-react mr-1"></i>React Native
-                </span>
+                  class="tech-badge bg-blue-500/20 text-blue-400 font-semibold rounded-full hover:scale-105 transition-transform duration-200 text-xs sm:text-sm"><i
+                    class="fab fa-react mr-1" aria-hidden="true"></i>React Native</span>
                 <span
-                  class="bg-purple-500/90 backdrop-blur-md text-white text-xs px-3 py-1.5 rounded-full font-semibold shadow-xl border border-purple-300/30 transition-all duration-300 delay-200">
-                  <i class="fas fa-layer-group mr-1"></i>Redux
-                </span>
+                  class="tech-badge bg-purple-500/20 text-purple-400 font-semibold rounded-full hover:scale-105 transition-transform duration-200 text-xs sm:text-sm"><i
+                    class="fas fa-layer-group mr-1" aria-hidden="true"></i>Redux</span>
                 <span
-                  class="bg-green-500/90 backdrop-blur-md text-white text-xs px-3 py-1.5 rounded-full font-semibold shadow-xl border border-green-300/30 transition-all duration-300 delay-300">
-                  <i class="fab fa-node-js mr-1"></i>Node.js
-                </span>
+                  class="tech-badge bg-green-500/20 text-green-400 font-semibold rounded-full hover:scale-105 transition-transform duration-200 text-xs sm:text-sm"><i
+                    class="fab fa-node-js mr-1" aria-hidden="true"></i>Node.js</span>
                 <span
-                  class="bg-orange-500/90 backdrop-blur-md text-white text-xs px-3 py-1.5 rounded-full font-semibold shadow-xl border border-orange-300/30 transition-all duration-300 delay-500">
-                  <i class="fas fa-database mr-1"></i>MariaDB
-                </span>
+                  class="tech-badge bg-orange-500/20 text-orange-400 font-semibold rounded-full hover:scale-105 transition-transform duration-200 text-xs sm:text-sm"><i
+                    class="fas fa-database mr-1" aria-hidden="true"></i>MariaDB</span>
               </div>
             </div>
           </div>
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-3">Cross-Platform Not Defteri</h3>
-            <p class="text-gray-400 mb-4">React Native ile geliştirilmiş mobil uygulama. <strong
-                class="text-green-400">Real-time senkronizasyon</strong>.</p>
-            <div class="mb-4">
-              <div class="flex items-center space-x-2 mb-2">
-                <i class="fas fa-sync text-green-400"></i>
-                <span class="text-sm text-green-400">Anlık veri senkronizasyonu</span>
-              </div>
-              <div class="flex items-center space-x-2">
-                <i class="fas fa-mobile-alt text-blue-400"></i>
-                <span class="text-sm text-blue-400">Cross-platform uyumluluk</span>
+          <div class="p-4 sm:p-6">
+            <h3 class="text-lg sm:text-xl font-semibold mb-3 text-white">Cross-Platform Not Defteri</h3>
+            <p class="text-sm sm:text-base text-gray-400 mb-4 leading-relaxed">React Native ile geliştirilmiş mobil
+              uygulama. Real-time senkronizasyon ve offline çalışma desteği.</p>
+            <div class="case-study-section bg-gray-900/20 p-3 sm:p-4 rounded-lg">
+              <div class="case-study-title text-sm sm:text-base">Mobil Özellikler</div>
+              <div class="case-study-text text-gray-300 leading-relaxed text-xs sm:text-sm">
+                • iOS ve Android uyumluluğu<br>
+                • Offline not alma ve senkronizasyon<br>
+                • Kategori bazlı not organizasyonu<br>
+                • Güvenli veri şifreleme
               </div>
             </div>
-            <div class="flex justify-between items-center">
-              <a href="./videos/Kayıt 2025-08-25 193525.mp4" onclick="playVideoModal()"
-                class="text-blue-400 hover:text-blue-300 transition-colors cursor-pointer flex items-center group/link">
-                <i
-                  class="fas fa-play-circle mr-2 transition-transform duration-200 group-hover/link:scale-110"></i>Video
-                İzle
+            <div class="stats-highlight grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 lg:gap-4">
+              <div class="stat-item bg-gray-800/50 rounded-lg p-2 sm:p-3 text-center">
+                <div class="number text-base sm:text-lg font-bold">2</div>
+                <div class="label text-xs sm:text-sm uppercase">Platform</div>
+              </div>
+              <div class="stat-item bg-gray-800/50 rounded-lg p-2 sm:p-3 text-center">
+                <div class="number text-base sm:text-lg font-bold">Real-time</div>
+                <div class="label text-xs sm:text-sm uppercase">Sync</div>
+              </div>
+              <div class="stat-item bg-gray-800/50 rounded-lg p-2 sm:p-3 text-center">
+                <div class="number text-base sm:text-lg font-bold">Offline</div>
+                <div class="label text-xs sm:text-sm uppercase">Support</div>
+              </div>
+            </div>
+            <div class="demo-link-group flex items-center gap-3 sm:gap-5 mt-4">
+              <a href="./videos/Kayıt 2025-08-25 193525.mp4" onclick="playVideoModal(); return false;"
+                class="text-blue-400 hover:text-blue-300 font-semibold transition-transform duration-200 hover:scale-105 cursor-pointer text-sm sm:text-base"
+                aria-label="Not Defteri Video Demo">
+                <i class="fas fa-play-circle mr-2" aria-hidden="true"></i>Video Demo
               </a>
             </div>
           </div>
         </div>
       </div>
-      <div class="flex justify-center mt-12">
+      <div class="flex justify-center mt-8 sm:mt-12">
         <a href="https://github.com/mustafaciftc" target="_blank"
-          class="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-3 rounded-full hover:from-blue-600 hover:to-purple-700 transition-all transform hover:scale-105">
-          <i class="fab fa-github mr-2"></i>Tüm Projelerim
+          class="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 sm:px-8 py-3 rounded-full hover:from-blue-600 hover:to-purple-700 transition-all transform hover:scale-105 font-semibold text-sm sm:text-base"
+          aria-label="Tüm projeler için GitHub profili">
+          <i class="fab fa-github mr-2" aria-hidden="true"></i>Tüm Projelerim
         </a>
       </div>
     </div>
   </section>
 
- <section id="pricing" class="py-20 bg-gray-900/30 reveal">
+  <section id="pricing" class="py-20 bg-gray-900/30 reveal">
     <div class="container mx-auto px-6">
       <div class="pricing-header">
         <h2 class="text-5xl font-bold text-center gradient-text mb-4">Şeffaf Fiyatlandırma</h2>
         <p class="pricing-subtitle">
           Projenizin büyüklüğüne göre esnek paketler. Gizli masraf yok, şeffaf fiyatlandırma.
           <br>
-          <span class="text-sm text-gray-500 mt-2 block">Fiyatlar, projenin kapsamına ve özelliklerine göre değişmektedir.</span>
+          <span class="text-sm text-gray-500 mt-2 block">Fiyatlar, projenin kapsamına ve özelliklerine göre
+            değişmektedir.</span>
         </p>
       </div>
-
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
         <div class="pricing-card">
           <div class="text-center mb-6">
-            <div class="w-16 h-16 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div
+              class="w-16 h-16 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
               <i class="fas fa-bolt text-2xl text-white"></i>
             </div>
-            <h3 class="text-2xl font-bold text-yellow-400 mb-2">Başlangıç Paketi</h3>
-            <div class="price-tag">5K - 7K</div>
-            <div class="price-range">Türk Lirası</div>
+            <h3 class="text-2xl font-bold text-yellow-400 mb-2">Başlangıç</h3>
+            <div class="price-tag">2K+</div>
+            <div class="price-range">Landing Page / Basit Site</div>
           </div>
-
           <ul class="pricing-features">
-            <li><i class="fas fa-check"></i>1-5 Sayfa</li>
-            <li><i class="fas fa-check"></i>Mobil Uyumlu</li>
-            <li><i class="fas fa-check"></i>1-5 Günde Teslim</li>
-            <li><i class="fas fa-check"></i>SEO Temel Desteği</li>
-            <li><i class="fas fa-check"></i>Ücretsiz SSL Sertifikası</li>
-            <li><i class="fas fa-check"></i>1 Aylık Ücretsiz Destek</li>
+            <li><i class="fas fa-check"></i>1-5 Sayfa statik site</li>
+            <li><i class="fas fa-check"></i>Tam mobil uyumlu</li>
+            <li><i class="fas fa-check"></i>3-5 gün teslimat</li>
+            <li><i class="fas fa-check"></i>Temel SEO optimizasyon</li>
+            <li><i class="fas fa-check"></i>SSL sertifikası dahil</li>
+            <li><i class="fas fa-check"></i>7 gün ücretsiz revizyon</li>
+            <li><i class="fas fa-check"></i>1 ay teknik destek</li>
           </ul>
-
-          <a href="https://wa.me/905319583445?text=Merhaba,%20web%20sitenizden%20ulaşıyorum.%20Bir%20proje%20hakkında%20görüşmek%20istiyorum." class="pricing-cta">Teklif Al</a>
+          <a href="https://wa.me/905319583445?text=Merhaba,%20Başlangıç%20paketi%20hakkında%20bilgi%20almak%20istiyorum."
+            class="pricing-cta" aria-label="Başlangıç paketi için teklif al">Teklif Al</a>
         </div>
-
         <div class="pricing-card featured">
           <div class="text-center mb-6">
-            <div class="w-16 h-16 bg-gradient-to-r from-green-400 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div
+              class="w-16 h-16 bg-gradient-to-r from-green-400 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
               <i class="fas fa-globe text-2xl text-white"></i>
             </div>
             <h3 class="text-2xl font-bold text-green-400 mb-2">Kurumsal Web</h3>
-            <div class="price-tag">15K - 35K</div>
-            <div class="price-range">Türk Lirası</div>
+            <div class="price-tag">8K+</div>
+            <div class="price-range">Dinamik Web Sitesi</div>
           </div>
-
           <ul class="pricing-features">
-            <li><i class="fas fa-check"></i>Responsive tasarım</li>
+            <li><i class="fas fa-check"></i>Özel tasarım ve kodlama</li>
             <li><i class="fas fa-check"></i>CMS yönetim paneli</li>
-            <li><i class="fas fa-check"></i>SEO optimizasyonu</li>
-            <li><i class="fas fa-check"></i>SSL sertifikası</li>
-            <li><i class="fas fa-check"></i>Google Analytics</li>
+            <li><i class="fas fa-check"></i>İletişim formu entegrasyonu</li>
+            <li><i class="fas fa-check"></i>Google Analytics dahil</li>
+            <li><i class="fas fa-check"></i>Gelişmiş SEO optimizasyon</li>
+            <li><i class="fas fa-check"></i>Blog/haber modülü</li>
             <li><i class="fas fa-check"></i>30 gün ücretsiz destek</li>
           </ul>
-
-          <a href="https://wa.me/905319583445?text=Merhaba,%20web%20sitenizden%20ulaşıyorum.%20Bir%20proje%20hakkında%20görüşmek%20istiyorum." class="pricing-cta">Teklif Al</a>
+          <a href="https://wa.me/905319583445?text=Merhaba,%20Kurumsal%20web%20paketi%20hakkında%20bilgi%20almak%20istiyorum."
+            class="pricing-cta" aria-label="Kurumsal web paketi için teklif al">Teklif Al</a>
         </div>
-
         <div class="pricing-card">
           <div class="text-center mb-6">
-            <div class="w-16 h-16 bg-gradient-to-r from-purple-400 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
-              <i class="fas fa-mobile-alt text-2xl text-white"></i>
-            </div>
-            <h3 class="text-2xl font-bold text-purple-400 mb-2">Mobil App</h3>
-            <div class="price-tag">20K - 50K</div>
-            <div class="price-range">Türk Lirası</div>
-          </div>
-
-          <ul class="pricing-features">
-            <li><i class="fas fa-check"></i>iOS & Android</li>
-            <li><i class="fas fa-check"></i>Backend API</li>
-            <li><i class="fas fa-check"></i>Push bildirimler</li>
-            <li><i class="fas fa-check"></i>Kullanıcı girişi</li>
-            <li><i class="fas fa-check"></i>Store yükleme</li>
-            <li><i class="fas fa-check"></i>Bakım desteği</li>
-          </ul>
-
-          <a href="https://wa.me/905319583445?text=Merhaba,%20web%20sitenizden%20ulaşıyorum.%20Bir%20proje%20hakkında%20görüşmek%20istiyorum." class="pricing-cta">Teklif Al</a>
-        </div>
-
-        <div class="pricing-card">
-          <div class="text-center mb-6">
-            <div class="w-16 h-16 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div
+              class="w-16 h-16 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
               <i class="fas fa-shopping-cart text-2xl text-white"></i>
             </div>
             <h3 class="text-2xl font-bold text-blue-400 mb-2">E-Ticaret</h3>
-            <div class="price-tag">25K - 60K</div>
-            <div class="price-range">Türk Lirası</div>
+            <div class="price-tag">12K+</div>
+            <div class="price-range">Online Mağaza</div>
           </div>
-
           <ul class="pricing-features">
-            <li><i class="fas fa-check"></i>Ödeme entegrasyonu</li>
-            <li><i class="fas fa-check"></i>Stok yönetimi</li>
-            <li><i class="fas fa-check"></i>Sipariş takibi</li>
-            <li><i class="fas fa-check"></i>Admin paneli</li>
-            <li><i class="fas fa-check"></i>Mobil uyumluluk</li>
-            <li><i class="fas fa-check"></i>Kargo entegrasyonu</li>
+            <li><i class="fas fa-check"></i>İyzico ödeme entegrasyonu</li>
+            <li><i class="fas fa-check"></i>Kapsamlı stok yönetimi</li>
+            <li><i class="fas fa-check"></i>Sipariş takip sistemi</li>
+            <li><i class="fas fa-check"></i>Admin yönetim paneli</li>
+            <li><i class="fas fa-check"></i>Kategori ve filtreleme</li>
+            <li><i class="fas fa-check"></i>Kargo firma entegrasyonu</li>
+            <li><i class="fas fa-check"></i>2 ay ücretsiz destek</li>
           </ul>
-
-          <a href="https://wa.me/905319583445?text=Merhaba,%20web%20sitenizden%20ulaşıyorum.%20Bir%20proje%20hakkında%20görüşmek%20istiyorum." class="pricing-cta">Teklif Al</a>
+          <a href="https://wa.me/905319583445?text=Merhaba,%20E-Ticaret%20paketi%20hakkında%20bilgi%20almak%20istiyorum."
+            class="pricing-cta" aria-label="E-Ticaret paketi için teklif al">Teklif Al</a>
         </div>
-      </div>
+        <div class="pricing-card">
+          <div class="text-center mb-6">
+            <div
+              class="w-16 h-16 bg-gradient-to-r from-purple-400 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <i class="fas fa-mobile-alt text-2xl text-white"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-purple-400 mb-2">Mobil App</h3>
+            <div class="price-tag">15K+</div>
+            <div class="price-range">iOS & Android</div>
+          </div>
+          <ul class="pricing-features">
+            <li><i class="fas fa-check"></i>React Native geliştirme</li>
+            <li><i class="fas fa-check"></i>iOS & Android uyumluluğu</li>
+            <li><i class="fas fa-check"></i>Backend API dahil</li>
+            <li><i class="fas fa-check"></i>Push bildirim sistemi</li>
+            <li><i class="fas fa-check"></i>Kullanıcı giriş sistemi</li>
+            <li><i class="fas fa-check"></i>App Store yükleme</li>
+            <li><i class="fas fa-check"></i>3 ay bakım desteği</li>
+          </ul>
+          <a href="https://wa.me/905319583445?text=Merhaba,%20Mobil%20uygulama%20paketi%20hakkında%20bilgi%20almak%20istiyorum."
+            class="pricing-cta" aria-label="Mobil uygulama paketi için teklif al">Teklif Al</a>
+        </div>
 
+      </div>
       <div class="pricing-guarantee">
         <div class="flex items-center justify-center mb-4">
           <i class="fas fa-shield-alt text-4xl text-green-400 mr-4"></i>
@@ -1196,10 +1304,11 @@
           </div>
         </div>
       </div>
-
       <div class="text-center mt-12">
         <p class="text-gray-400 mb-6">Özel ihtiyaçlarınız için kişiye özel çözümler de sunuyorum</p>
-        <a href="https://wa.me/905319583445?text=Merhaba,%20web%20sitenizden%20ulaşıyorum.%20Bir%20proje%20hakkında%20görüşmek%20istiyorum." class="bg-gradient-to-r from-green-500 to-blue-500 text-white px-10 py-4 rounded-full hover:from-green-600 hover:to-blue-600 transition-all transform hover:scale-105 text-lg font-semibold">
+        <a href="https://wa.me/905319583445?text=Merhaba,%20web%20sitenizden%20ulaşıyorum.%20Bir%20proje%20hakkında%20görüşmek%20istiyorum."
+          class="bg-gradient-to-r from-green-500 to-blue-500 text-white px-10 py-4 rounded-full hover:from-green-600 hover:to-blue-600 transition-all transform hover:scale-105 text-lg font-semibold"
+          aria-label="Ücretsiz fiyat teklifi al">
           <i class="fas fa-calculator mr-2"></i>Ücretsiz Fiyat Teklifi Al
         </a>
       </div>
