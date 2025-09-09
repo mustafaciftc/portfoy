@@ -217,7 +217,7 @@
     }
 
     .profile-picture {
-        background-image: url('./images/pp2.jpg');
+        background-image: url('../images/pp2.jpg');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
