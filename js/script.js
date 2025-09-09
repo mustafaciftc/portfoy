@@ -106,44 +106,55 @@ function createParticles() {
 }
 createParticles();
 
-const form = document.getElementById('contact-form');
-const formMessage = document.getElementById('form-message');
-form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const message = document.getElementById('message').value.trim();
-    if (!name || !email || !message) {
-        formMessage.textContent = 'Lütfen tüm alanları doldurun.';
-        formMessage.classList.remove('text-green-400', 'hidden');
-        formMessage.classList.add('text-red-400');
-        return;
-    }
-    try {
-        const response = await fetch('https://formspree.io/f/mpwdealb', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            body: JSON.stringify({ name, email, message })
-        });
-        if (response.ok) {
-            formMessage.textContent = 'Mesajınız başarıyla gönderildi!';
-            formMessage.classList.remove('text-red-400', 'hidden');
-            formMessage.classList.add('text-green-400');
-            form.reset();
-            setTimeout(() => {
-                formMessage.classList.add('hidden');
-            }, 5000);
-        } else {
-            throw new Error('Form gönderimi başarısız.');
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('contact-form');
+    const formMessage = document.getElementById('form-message');
+
+    form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        if (!name || !email || !message) {
+            formMessage.textContent = 'Lütfen tüm alanları doldurun.';
+            formMessage.classList.remove('text-green-400', 'hidden');
+            formMessage.classList.add('text-red-400');
+            return;
         }
-    } catch (error) {
-        formMessage.textContent = 'Mesaj gönderilirken bir hata oluştu. Lütfen tekrar deneyin.';
-        formMessage.classList.remove('text-green-400', 'hidden');
-        formMessage.classList.add('text-red-400');
-    }
+
+        try {
+            const response = await fetch('https://formspree.io/f/mpwdealb', {
+                method: 'POST',
+                body: JSON.stringify({ name, email, message }),
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                formMessage.textContent = 'Mesajınız başarıyla gönderildi. Yönlendiriliyorsunuz...';
+                formMessage.classList.remove('text-red-400', 'hidden');
+                formMessage.classList.add('text-green-400');
+
+                form.reset();
+
+                setTimeout(() => {
+                    window.location.href = 'https://mustafa-ciftci-portfoy.netlify.app/tesekkurler.html';
+                }, 1000);
+
+            } else {
+                throw new Error('Form gönderimi başarısız.');
+            }
+
+        } catch (error) {
+            formMessage.textContent = 'Mesaj gönderilirken bir hata oluştu. Lütfen tekrar deneyin.';
+            formMessage.classList.remove('text-green-400', 'hidden');
+            formMessage.classList.add('text-red-400');
+        }
+    });
 });
 
 window.addEventListener('scroll', () => {
