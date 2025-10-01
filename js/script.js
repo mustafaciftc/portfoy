@@ -304,3 +304,69 @@ function playVideoModal() {
     modal.addEventListener('click', closeModal);
     document.addEventListener('keydown', handleKeyPress);
 }
+
+ function openVideoModal(videoSrc) {
+      const modal = document.getElementById('videoModal');
+      const video = document.getElementById('modalVideo');
+      
+      video.src = videoSrc;
+      modal.classList.add('active');
+      video.play();
+      
+      // ESC tuşu ile kapatma
+      document.addEventListener('keydown', handleEscKey);
+    }
+
+    function closeVideoModal() {
+      const modal = document.getElementById('videoModal');
+      const video = document.getElementById('modalVideo');
+      
+      modal.classList.remove('active');
+      video.pause();
+      video.currentTime = 0;
+      
+      document.removeEventListener('keydown', handleEscKey);
+    }
+
+    function handleEscKey(event) {
+      if (event.key === 'Escape') {
+        closeVideoModal();
+      }
+    }
+
+    // Modal dışına tıklayarak kapatma
+    document.getElementById('videoModal').addEventListener('click', function(event) {
+      if (event.target === this) {
+        closeVideoModal();
+      }
+    });
+
+    // Video hover efektleri
+    document.addEventListener('DOMContentLoaded', function() {
+      const videos = document.querySelectorAll('.video-container video');
+      
+      videos.forEach(video => {
+        video.addEventListener('mouseenter', function() {
+          this.play().catch(e => console.log('Video oynatma hatası:', e));
+        });
+        
+        video.addEventListener('mouseleave', function() {
+          this.pause();
+          this.currentTime = 0;
+        });
+      });
+
+      // Proje kartlarına hover efekti
+      const projectCards = document.querySelectorAll('.project-card');
+      projectCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+          this.style.transform = 'translateY(-8px)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+          this.style.transform = 'translateY(0)';
+        });
+      });
+    });
+
+   
