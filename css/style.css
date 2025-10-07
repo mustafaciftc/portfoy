@@ -329,7 +329,6 @@
     }
 
     .pricing-card.featured::after {
-        content: 'POPÜLER';
         position: absolute;
         top: 1rem;
         right: -2rem;
@@ -722,7 +721,6 @@
     }
 
     .featured-project::after {
-        content: 'ÖNE ÇIKAN';
         position: absolute;
         top: 1rem;
         right: -2rem;
