@@ -256,6 +256,7 @@ document.addEventListener('DOMContentLoaded', function () {
             createParticles();
         }
     });
+    
 });
 
 function playVideoModal() {
