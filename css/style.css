@@ -700,12 +700,32 @@
         color: #10b981;
     }
 
-    /* Modern Grid Layout */
-    .projects-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: 2rem;
-    }
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    align-items: stretch; /* TÜM kartlar aynı yükseklikte olur */
+}
+
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+
+.project-card .p-6 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.project-card .flex.justify-between {
+    margin-top: auto;
+}
+
 
     @media (max-width: 768px) {
         .projects-grid {
