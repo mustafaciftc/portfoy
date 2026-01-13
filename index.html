@@ -1,1285 +1,653 @@
 <!DOCTYPE html>
 <html lang="tr">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portföy Sitesi</title>
-  <meta name="description"
-    content="3+ yıl deneyimli Full Stack Developer. Laravel, Node.js, React ile e-ticaret ve web uygulamaları geliştiriyorum. %40'a kadar performans artışı garantili çözümler.">
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Mustafa Çiftci - Full Stack Developer Portföyü" />
+    <meta name="author" content="Mustafa Çiftci" />
+    <title>Mustafa Çiftci - Full Stack Developer</title>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./css/style.css">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA_ID"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'YOUR_GA_ID');
-  </script>
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css" />
+    <link rel="stylesheet" href="assets/css/templatemo-style.css" />
+    <link rel="stylesheet" href="assets/css/owl.css" />
+    <link rel="stylesheet" href="assets/css/lightbox.css" />
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 
-<body class="text-white">
-  <div class="particles" id="particles"></div>
-  <div id="menu-overlay"></div>
-
-  <nav class="fixed top-0 w-full z-50 glass">
-    <div class="container mx-auto px-6 py-4">
-      <div class="flex justify-between items-center">
-        <a href="#home" class="flex items-center group">
-          <svg width="45" height="45" viewBox="0 0 100 100"
-            class="mr-2 transition-all duration-300 group-hover:rotate-12 group-hover:scale-110">
-            <defs>
-              <linearGradient id="portfolyoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#10b981" />
-                <stop offset="100%" stop-color="#3b82f6" />
-              </linearGradient>
-              <filter id="softGlow" height="300%" width="300%" x="-75%" y="-75%">
-                <feMorphology operator="dilate" radius="2" in="SourceAlpha" result="thicken" />
-                <feGaussianBlur in="thicken" stdDeviation="3" result="blurred" />
-                <feFlood flood-color="#10b981" flood-opacity="0.5" result="glowColor" />
-                <feComposite in="glowColor" in2="blurred" operator="in" result="softGlow" />
-                <feMerge>
-                  <feMergeNode in="softGlow" />
-                  <feMergeNode in="SourceGraphic" />
-                </feMerge>
-              </filter>
-            </defs>
-
-            <rect x="25" y="20" width="50" height="60" rx="5" fill="url(#portfolyoGradient)" filter="url(#softGlow)" />
-            <line x1="25" y1="35" x2="75" y2="35" stroke="white" stroke-width="2" />
-            <line x1="25" y1="45" x2="75" y2="45" stroke="white" stroke-width="2" />
-            <line x1="25" y1="55" x2="60" y2="55" stroke="white" stroke-width="2" />
-
-            <path d="M65,65 L80,50 L75,45 L60,60 Z" fill="#fbbf24" />
-            <path d="M80,50 L85,45 L80,40 L75,45 Z" fill="#f59e0b" />
-
-            <circle cx="40" cy="70" r="2" fill="white" opacity="0.8" />
-            <circle cx="50" cy="70" r="2" fill="white" opacity="0.8" />
-          </svg>
-
-          <span class="text-xl font-bold gradient-text hidden md:block">Portföy</span>
-        </a>
-
-        <ul class="hidden md:flex space-x-8">
-          <li><a href="#about" class="hover:text-green-400 transition-colors">Hakkımda</a></li>
-          <li><a href="#skills" class="hover:text-green-400 transition-colors">Yetenekler</a></li>
-          <li><a href="#projects" class="hover:text-green-400 transition-colors">Projeler</a></li>
-          <li><a href="#pricing" class="hover:text-green-400 transition-colors">Fiyatlandırma</a></li>
-          <li><a href="#contact" class="hover:text-green-400 transition-colors">İletişim</a></li>
-
-        </ul>
-
-        <button id="menu-toggle" class="md:hidden text-white text-xl">
-          <i class="fas fa-bars"></i>
-        </button>
-      </div>
-
-      <ul id="mobile-menu" class="md:hidden space-y-6 menu-closed">
-        <li><a href="#about" data-close-menu class="block hover:text-green-400 transition-colors text-lg">Hakkımda</a>
-        </li>
-        <li><a href="#skills" data-close-menu
-            class="block hover:text-green-400 transition-colors text-lg">Yetenekler</a></li>
-        <li><a href="#projects" data-close-menu
-            class="block hover:text-green-400 transition-colors text-lg">Projeler</a></li>
-        <li><a href="#pricing" data-close-menu
-            class="block hover:text-green-400 transition-colors text-lg">Fiyatlandırma</a></li>
-        <li><a href="#contact" data-close-menu class="block hover:text-green-400 transition-colors text-lg">İletişim</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-
-  <section id="home" class="min-h-screen flex items-center justify-center relative">
-    <div class="container mx-auto px-6 text-center">
-      <div class="mt-20">
-        <div class="w-40 h-40 mx-auto mb-6 rounded-full bg-gradient-to-r from-green-400 to-blue-500 p-1">
-          <div class="w-full h-full rounded-full bg-gray-800 flex items-center justify-center overflow-hidden">
-            <div class="profile-picture"></div>
-          </div>
-        </div>
-      </div>
-
-      <h1 class="text-5xl md:text-7xl font-bold mb-4">
-        <span class="gradient-text">Mustafa</span> Çiftci
-      </h1>
-
-      <div class="text-xl md:text-2xl mb-6 h-8">
-        <span id="typed-text" class="typing"></span>
-      </div>
-
-      <p class="text-lg md:text-xl text-green-400 mb-2 max-w-3xl mx-auto font-semibold">
-        İşletmeler için satış ve verimlilik odaklı web & mobil yazılımlar geliştiriyorum.
-      </p>
-      <p class="text-base md:text-lg text-gray-400 mb-4 max-w-3xl mx-auto">
-        İş süreçlerinizi dijitale taşıyorum, satış ve verimliliği artırıyorum. Satan, hızlı ve yönetilebilir e-ticaret
-        sistemleri kuruyorum. Fikrinizi MVP'ye dönüştürüyorum.
-      </p>
-      <div class="guarantee-badge text-center py-2 px-6 rounded-full text-white font-semibold mb-8 inline-block">
-        <i class="fas fa-clock mr-2"></i>24 Saat İçinde Dönüş Garantisi
-      </div>
-
-      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-        <a href="#projects"
-          class="bg-gradient-to-r from-green-500 to-green-600 text-white px-8 py-3 rounded-full hover:from-green-600 hover:to-green-700 transition-all transform hover:scale-105">
-          <i class="fas fa-rocket mr-2"></i>Projelerimi İncele
-        </a>
-        <a href="#contact"
-          class="border-2 border-green-500 text-green-500 px-8 py-3 rounded-full hover:bg-green-500 hover:text-white transition-all transform hover:scale-105">
-          <i class="fas fa-comments mr-2"></i>Ücretsiz Konsültasyon
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section id="about" class="py-20 reveal">
-    <div class="container mx-auto px-6">
-      <h2 class="text-4xl font-bold text-center mb-16 gradient-text">Hakkımda</h2>
-
-      <div class="grid md:grid-cols-2 gap-10 items-stretch">
-        <div class="glass p-8 rounded-2xl">
-          <h3 class="text-2xl font-semibold mb-6 text-green-400">Profesyonel Yolculuğum</h3>
-
-          <p class="text-gray-300 mb-6">
-            Yazılım geliştirme sektöründe 3 yılı aşkın süredir edindiğim profesyonel deneyimle, Full Stack Developer
-            olarak
-            hem frontend hem de backend teknolojilerinde uzmanlık geliştirdim. E-ticaret çözümleri, kurumsal web
-            uygulamaları
-            ve cross-platform mobil uygulama geliştirme alanlarında özelleşmiş bulunmaktayım.
-          </p>
-
-          <p class="text-gray-300 mb-6">
-            Teknolojiye olan tutkum, kullanıcı odaklı ve yenilikçi çözümler üretmeme olanak sağlarken, sürekli öğrenme
-            ve
-            kendimi geliştirme disiplinim sayesinde sektördeki güncel trendleri ve en iyi uygulamaları takip ediyorum.
-            Her projeyi bir mühendislik eseri olarak ele alıp, en ince detaylarına kadar özen gösteriyor ve
-            sürdürülebilir
-            çözümler sunmayı hedefliyorum.
-          </p>
-
-          <div class="mt-8">
-            <h4 class="text-xl font-semibold text-yellow-400 mb-4">Çalışma Prensiplerim</h4>
-            <ul class="space-y-2 text-gray-300">
-              <li><i class="fas fa-check text-green-400 mr-2"></i>Şeffaf iletişim ve düzenli güncellemeler</li>
-              <li><i class="fas fa-check text-green-400 mr-2"></i>Zamanında teslimat ve bütçe disiplini</li>
-              <li><i class="fas fa-check text-green-400 mr-2"></i>Kaliteli kod ve sürdürülebilir çözümler</li>
-              <li><i class="fas fa-check text-green-400 mr-2"></i>Müşteri memnuniyeti odaklı yaklaşım</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="glass p-8 rounded-2xl">
-          <h3 class="text-2xl font-semibold mb-6">Neden Beni Seçmelisiniz?</h3>
-
-          <div class="space-y-6">
-            <div class="flex items-start">
-              <div class="bg-green-500/10 p-3 rounded-full mr-4">
-                <i class="fas fa-bolt text-green-400"></i>
-              </div>
-              <div>
-                <h4 class="font-semibold text-green-400">Hızlı Çözümler</h4>
-                <p class="text-gray-400 text-sm">Projelerinizi kısa sürede ve en yüksek kalitede teslim ediyorum.</p>
-              </div>
-            </div>
-
-            <div class="flex items-start">
-              <div class="bg-blue-500/10 p-3 rounded-full mr-4">
-                <i class="fas fa-headset text-blue-400"></i>
-              </div>
-              <div>
-                <h4 class="font-semibold text-blue-400">7/24 Destek</h4>
-                <p class="text-gray-400 text-sm">Proje sonrası da ihtiyaç duyduğunuz her an yanınızdayım.</p>
-              </div>
-            </div>
-
-            <div class="flex items-start">
-              <div class="bg-purple-500/10 p-3 rounded-full mr-4">
-                <i class="fas fa-shield-alt text-purple-400"></i>
-              </div>
-              <div>
-                <h4 class="font-semibold text-purple-400">Güvenlik</h4>
-                <p class="text-gray-400 text-sm">Güvenli kodlama standartlarına uygun, güvenilir çözümler sunuyorum.</p>
-              </div>
-            </div>
-
-            <div class="flex items-start">
-              <div class="bg-yellow-500/10 p-3 rounded-full mr-4">
-                <i class="fas fa-rocket text-yellow-400"></i>
-              </div>
-              <div>
-                <h4 class="font-semibold text-yellow-400">Performans</h4>
-                <p class="text-gray-400 text-sm">%40'a varan performans artışı ile daha hızlı web siteleri.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="mt-8 text-center">
-            <a href="#contact"
-              class="bg-gradient-to-r from-green-500 to-blue-500 text-white px-6 py-3 rounded-full hover:from-green-600 hover:to-blue-600 transition-all transform hover:scale-105 inline-block">
-              <i class="fas fa-comments mr-2"></i>Ücretsiz Danışmanlık
-            </a>
-          </div>
-
-          <div class="mt-6 flex flex-col items-center sm:flex-row sm:justify-center">
-            <a href="/files/CV-TR.pdf" download="Mustafa_Ciftci_CV_TR.pdf"
-              class="w-full sm:w-auto bg-gradient-to-r from-blue-500 to-purple-500 text-white px-6 py-3 rounded-full hover:from-blue-600 hover:to-purple-600 transition-all transform hover:scale-105 mb-4 sm:mb-0 sm:mr-4">
-              <i class="fas fa-file-download mr-2"></i>CV İndir (Türkçe)
-            </a>
-            <a href="/files/CV-EN.pdf" download="Mustafa_Ciftci_CV_EN.pdf"
-              class="w-full sm:w-auto bg-gradient-to-r from-blue-500 to-purple-500 text-white px-6 py-3 rounded-full hover:from-blue-600 hover:to-purple-600 transition-all transform hover:scale-105">
-              <i class="fas fa-file-download mr-2"></i>CV İndir (English)
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="skills" class="py-20 bg-gray-900/50 reveal">
-    <div class="container mx-auto px-6">
-      <h2 class="text-4xl font-bold text-center mb-16 gradient-text">Teknik Yeteneklerim</h2>
-
-      <div class="grid md:grid-cols-2 gap-12">
-        <div class="glass p-8 rounded-2xl">
-          <h3 class="text-2xl font-semibold mb-8">Backend & Frontend</h3>
-
-          <div class="space-y-6">
-            <div>
-              <div class="flex justify-between mb-2">
-                <span>Laravel & PHP</span>
-                <span>90%</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-progress" data-width="90"></div>
-              </div>
-            </div>
-
-            <div>
-              <div class="flex justify-between mb-2">
-                <span>Node.js & Express</span>
-                <span>85%</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-progress" data-width="85"></div>
-              </div>
-            </div>
-
-            <div>
-              <div class="flex justify-between mb-2">
-                <span>React & React Native</span>
-                <span>80%</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-progress" data-width="80"></div>
-              </div>
-            </div>
-
-            <div>
-              <div class="flex justify-between mb-2">
-                <span>MySQL & MongoDB</span>
-                <span>85%</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-progress" data-width="85"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="glass p-8 rounded-2xl">
-          <h3 class="text-2xl font-semibold mb-8">Araçlar & Teknolojiler</h3>
-          <div class="grid grid-cols-3 gap-4">
-            <div class="text-center p-4 bg-gray-800/50 rounded-lg hover-lift">
-              <i class="fab fa-laravel text-3xl text-red-500 mb-2"></i>
-              <p class="text-sm">Laravel</p>
-            </div>
-            <div class="text-center p-4 bg-gray-800/50 rounded-lg hover-lift">
-              <i class="fab fa-node-js text-3xl text-green-500 mb-2"></i>
-              <p class="text-sm">Node.js</p>
-            </div>
-            <div class="text-center p-4 bg-gray-800/50 rounded-lg hover-lift">
-              <i class="fab fa-react text-3xl text-blue-400 mb-2"></i>
-              <p class="text-sm">React</p>
-            </div>
-            <div class="text-center p-4 bg-gray-800/50 rounded-lg hover-lift">
-              <i class="fab fa-react text-3xl text-cyan-400 mb-2"></i>
-              <p class="text-sm">React Native</p>
-            </div>
-            <div class="text-center p-4 bg-gray-800/50 rounded-lg hover-lift">
-              <i class="fas fa-database text-3xl text-blue-500 mb-2"></i>
-              <p class="text-sm">MySQL</p>
-            </div>
-            <div class="text-center p-4 bg-gray-800/50 rounded-lg hover-lift">
-              <i class="fab fa-git-alt text-3xl text-orange-500 mb-2"></i>
-              <p class="text-sm">Git</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="projects" class="py-20 reveal">
-    <div class="container mx-auto px-6">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold gradient-text mb-4">Projelerim</h2>
-        <p class="text-xl text-gray-300 max-w-2xl mx-auto">
-          Modern teknolojilerle geliştirdiğim, performans odaklı web ve mobil uygulamalar
-        </p>
-      </div>
-
-      <div class="projects-grid">
-        <!-- Kart 1 - Market POS -->
-        <div class="project-card glass rounded-2xl overflow-hidden featured-project">
-          <div class="project-image-container">
-            <img src="./images/market.png" alt="Market Kasa Sistemi"
-              class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105">
-            <div class="project-overlay">
-              <div class="flex flex-wrap gap-2">
-                <span class="tech-badge bg-red-500/20 text-red-400 px-3 py-1 rounded-full text-sm font-semibold">
-                  <i class="fab fa-laravel mr-1"></i>Laravel
-                </span>
-                <span class="tech-badge bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-sm font-semibold">
-                  <i class="fas fa-database mr-1"></i>MySQL
-                </span>
-                <span class="tech-badge bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm font-semibold">
-                  <i class="fab fa-bootstrap mr-1"></i>Bootstrap
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-3 text-white">Market POS & Veresiye Sistemi</h3>
-            <p class="text-gray-400 mb-4 leading-relaxed">
-              Laravel ile geliştirilmiş kapsamlı POS sistemi. Stok yönetimi, satış raporlama ve veresiye takip
-              özellikleri.
-            </p>
-
-            <div class="bg-gray-900/20 p-4 rounded-lg mb-4">
-              <h4 class="text-green-400 font-semibold mb-2">Proje Detayları</h4>
-              <ul class="text-gray-300 text-sm space-y-1">
-                <li>• Real-time stok takibi ve otomatik uyarı sistemi</li>
-                <li>• Müşteri veresiye hesabı ve ödeme takibi</li>
-                <li>• Günlük/aylık satış raporlama ve analitik</li>
-                <li>• 4 farklı ödeme methodu</li>
-              </ul>
-            </div>
-
-            <div class="grid grid-cols-3 gap-3 mb-4">
-              <div class="stat-item bg-gray-800/50 rounded-lg p-3 text-center">
-                <div class="text-lg font-bold text-green-400">50+</div>
-                <div class="text-xs uppercase text-gray-400">Aktif Kullanıcı</div>
-              </div>
-              <div class="stat-item bg-gray-800/50 rounded-lg p-3 text-center">
-                <div class="text-lg font-bold text-blue-400">200+</div>
-                <div class="text-xs uppercase text-gray-400">Günlük İşlem</div>
-              </div>
-              <div class="stat-item bg-gray-800/50 rounded-lg p-3 text-center">
-                <div class="text-lg font-bold text-yellow-400">%45</div>
-                <div class="text-xs uppercase text-gray-400">Verimlilik</div>
-              </div>
-            </div>
-
-            <div class="flex justify-between items-center">
-              <a href="https://everesiyedefteri.com.tr/" target="_blank"
-                class="demo-link text-green-400 hover:text-green-300 font-semibold transition-all duration-200">
-                <i class="fas fa-external-link-alt mr-2"></i>Canlı Demo
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Kart 2 - E-Ticaret -->
-        <div class="project-card glass rounded-2xl overflow-hidden">
-          <div class="project-image-container">
-            <img src="./images/stok.png" alt="E-Ticaret Platformu"
-              class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105">
-            <div class="project-overlay">
-              <div class="flex flex-wrap gap-2">
-                <span class="tech-badge bg-red-500/20 text-red-400 px-3 py-1 rounded-full text-sm font-semibold">
-                  <i class="fab fa-laravel mr-1"></i>Laravel
-                </span>
-                <span class="tech-badge bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm font-semibold">
-                  <i class="fab fa-bootstrap mr-1"></i>Bootstrap
-                </span>
-                <span class="tech-badge bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-sm font-semibold">
-                  <i class="fas fa-credit-card mr-1"></i>İyzico API
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-3 text-white">E-Ticaret & Stok Takip Platformu</h3>
-            <p class="text-gray-400 mb-4 leading-relaxed">
-              Kapsamlı e-ticaret çözümü. İyzico ödeme entegrasyonu, admin paneli ve gelişmiş stok yönetimi.
-            </p>
-
-            <div class="bg-gray-900/20 p-4 rounded-lg mb-4">
-              <h4 class="text-blue-400 font-semibold mb-2">Teknik Özellikler</h4>
-              <ul class="text-gray-300 text-sm space-y-1">
-                <li>• İyzico ödeme sistemi entegrasyonu</li>
-                <li>• Otomatik stok uyarı sistemi</li>
-                <li>• Müşteri sipariş takip paneli</li>
-                <li>• SEO optimizasyonu ve hız iyileştirmeleri</li>
-              </ul>
-            </div>
-
-            <div class="grid grid-cols-3 gap-3 mb-4">
-              <div class="stat-item bg-gray-800/50 rounded-lg p-3 text-center">
-                <div class="text-lg font-bold text-green-400">500+</div>
-                <div class="text-xs uppercase text-gray-400">Aylık Sipariş</div>
-              </div>
-              <div class="stat-item bg-gray-800/50 rounded-lg p-3 text-center">
-                <div class="text-lg font-bold text-blue-400">%100</div>
-                <div class="text-xs uppercase text-gray-400">Güvenli Ödeme</div>
-              </div>
-              <div class="stat-item bg-gray-800/50 rounded-lg p-3 text-center">
-                <div class="text-lg font-bold text-yellow-400">2sn</div>
-                <div class="text-xs uppercase text-gray-400">Yükleme</div>
-              </div>
-            </div>
-
-            <div class="flex justify-between items-center">
-              <a href="https://proje.doguweb.com.tr/" target="_blank"
-                class="demo-link text-green-400 hover:text-green-300 font-semibold transition-all duration-200">
-                <i class="fas fa-external-link-alt mr-2"></i>Canlı Demo
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Kart 3 - Forma Satış -->
-        <div class="project-card glass rounded-2xl overflow-hidden">
-          <div class="project-image-container">
-            <img src="./images/forma.png" alt="Forma Satış Uygulaması"
-              class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105">
-            <div class="project-overlay">
-              <div class="flex flex-wrap gap-2">
-                <span class="tech-badge bg-red-500/20 text-red-400 px-3 py-1 rounded-full text-sm font-semibold">
-                  <i class="fab fa-laravel mr-1"></i>Laravel
-                </span>
-                <span class="tech-badge bg-yellow-500/20 text-yellow-400 px-3 py-1 rounded-full text-sm font-semibold">
-                  <i class="fab fa-google mr-1"></i>Google Auth
-                </span>
-                <span class="tech-badge bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-sm font-semibold">
-                  <i class="fas fa-globe mr-1"></i>Multi-Language
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-3 text-white">Forma Satış Platformu</h3>
-            <p class="text-gray-400 mb-4 leading-relaxed">
-              2 dilde hizmet veren forma satış platformu. Google OAuth ve güvenli ödeme sistemi entegrasyonu.
-            </p>
-
-            <div class="bg-gray-900/20 p-4 rounded-lg mb-4">
-              <h4 class="text-yellow-400 font-semibold mb-2">Platform Özellikleri</h4>
-              <ul class="text-gray-300 text-sm space-y-1">
-                <li>• Türkçe, İngilizce dil desteği</li>
-                <li>• Google OAuth ile kolay üyelik sistemi</li>
-                <li>• Responsive tasarım ve mobil uyumluluk</li>
-                <li>• Admin paneli ve sipariş yönetimi</li>
-              </ul>
-            </div>
-
-            <div class="grid grid-cols-3 gap-3 mb-4">
-              <div class="stat-item bg-gray-800/50 rounded-lg p-3 text-center">
-                <div class="text-lg font-bold text-green-400">2</div>
-                <div class="text-xs uppercase text-gray-400">Dil Desteği</div>
-              </div>
-              <div class="stat-item bg-gray-800/50 rounded-lg p-3 text-center">
-                <div class="text-lg font-bold text-blue-400">%100</div>
-                <div class="text-xs uppercase text-gray-400">Mobil Uyumlu</div>
-              </div>
-              <div class="stat-item bg-gray-800/50 rounded-lg p-3 text-center">
-                <div class="text-lg font-bold text-yellow-400">OAuth</div>
-                <div class="text-xs uppercase text-gray-400">Google Login</div>
-              </div>
-            </div>
-
-            <div class="flex justify-between items-center">
-              <a href="https://satisformasi.doguweb.com.tr/" target="_blank"
-                class="demo-link text-green-400 hover:text-green-300 font-semibold transition-all duration-200">
-                <i class="fas fa-external-link-alt mr-2"></i>Canlı Demo
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Kart 4 - Dijital Pazarlama -->
-        <div class="project-card glass rounded-2xl overflow-hidden">
-          <div class="project-image-container">
-            <img src="./images/fikirmax.png" alt="Dijital Pazarlama Tanıtım Sitesi"
-              class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105">
-            <div class="project-overlay">
-              <div class="flex flex-wrap gap-2">
-                <span class="tech-badge bg-red-500/20 text-red-400 px-3 py-1 rounded-full text-sm font-semibold">
-                  <i class="fab fa-html5 mr-1"></i>HTML5
-                </span>
-                <span class="tech-badge bg-yellow-500/20 text-yellow-400 px-3 py-1 rounded-full text-sm font-semibold">
-                  <i class="fab fa-js mr-1"></i>JavaScript
-                </span>
-                <span class="tech-badge bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm font-semibold">
-                  <i class="fas fa-wind mr-1"></i>Tailwind CSS
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-3 text-white">Dijital Pazarlama Ajansı Sitesi</h3>
-            <p class="text-gray-400 mb-4 leading-relaxed">
-              Modern tasarım ile dijital pazarlama hizmetleri tanıtım sitesi. SEO optimizasyonu ve hızlı yükleme.
-            </p>
-
-            <div class="bg-gray-900/20 p-4 rounded-lg mb-4">
-              <h4 class="text-purple-400 font-semibold mb-2">Tasarım ve Performans</h4>
-              <ul class="text-gray-300 text-sm space-y-1">
-                <li>• Modern ve şık kullanıcı arayüzü</li>
-                <li>• Google PageSpeed 95+ skoru</li>
-                <li>• Tam responsive tasarım</li>
-                <li>• İletişim formu ve CTA optimizasyonu</li>
-              </ul>
-            </div>
-
-            <div class="grid grid-cols-3 gap-3 mb-4">
-              <div class="stat-item bg-gray-800/50 rounded-lg p-3 text-center">
-                <div class="text-lg font-bold text-green-400">95+</div>
-                <div class="text-xs uppercase text-gray-400">PageSpeed</div>
-              </div>
-              <div class="stat-item bg-gray-800/50 rounded-lg p-3 text-center">
-                <div class="text-lg font-bold text-blue-400">%30</div>
-                <div class="text-xs uppercase text-gray-400">Trafik Artışı</div>
-              </div>
-              <div class="stat-item bg-gray-800/50 rounded-lg p-3 text-center">
-                <div class="text-lg font-bold text-yellow-400">100%</div>
-                <div class="text-xs uppercase text-gray-400">Responsive</div>
-              </div>
-            </div>
-
-            <div class="flex justify-between items-center">
-              <a href="https://fikirmax.com" target="_blank"
-                class="demo-link text-green-400 hover:text-green-300 font-semibold transition-all duration-200">
-                <i class="fas fa-external-link-alt mr-2"></i>Canlı Demo
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Kart 5 - Endüstriyel Materyal -->
-        <div class="project-card glass rounded-2xl overflow-hidden">
-          <div class="project-image-container">
-            <img src="./images/tayff.png" alt="Materyal Satış Tanıtım Sitesi"
-              class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105">
-            <div class="project-overlay">
-              <div class="flex flex-wrap gap-2">
-                <span class="tech-badge bg-red-500/20 text-red-400 px-3 py-1 rounded-full text-sm font-semibold">
-                  <i class="fab fa-html5 mr-1"></i>HTML5
-                </span>
-                <span class="tech-badge bg-yellow-500/20 text-yellow-400 px-3 py-1 rounded-full text-sm font-semibold">
-                  <i class="fab fa-js mr-1"></i>JavaScript
-                </span>
-                <span class="tech-badge bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm font-semibold">
-                  <i class="fas fa-wind mr-1"></i>Tailwind CSS
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-3 text-white">Endüstriyel Materyal Sitesi</h3>
-            <p class="text-gray-400 mb-4 leading-relaxed">
-              Profesyonel materyal tanıtım ve satış platformu. Katalog görünümü ve iletişim entegrasyonu.
-            </p>
-
-            <div class="bg-gray-900/20 p-4 rounded-lg mb-4">
-              <h4 class="text-indigo-400 font-semibold mb-2">İş Çözümleri</h4>
-              <ul class="text-gray-300 text-sm space-y-1">
-                <li>• Ürün katalog sistemi</li>
-                <li>• Fiyat teklifi formu entegrasyonu</li>
-                <li>• Kategori bazlı ürün filtreleme</li>
-                <li>• Müşteri iletişim paneli</li>
-              </ul>
-            </div>
-
-            <div class="grid grid-cols-3 gap-3 mb-4">
-              <div class="stat-item bg-gray-800/50 rounded-lg p-3 text-center">
-                <div class="text-lg font-bold text-green-400">%35</div>
-                <div class="text-xs uppercase text-gray-400">Dönüşüm</div>
-              </div>
-              <div class="stat-item bg-gray-800/50 rounded-lg p-3 text-center">
-                <div class="text-sm font-bold text-blue-400">Fast</div>
-                <div class="text-xs uppercase text-gray-400">Yükleme</div>
-              </div>
-              <div class="stat-item bg-gray-800/50 rounded-lg p-3 text-center">
-                <div class="text-sm font-bold text-yellow-400">SEO</div>
-                <div class="text-xs uppercase text-gray-400">Optimized</div>
-              </div>
-            </div>
-
-            <div class="flex justify-between items-center">
-              <a href="https://tayff.com.tr" target="_blank"
-                class="demo-link text-green-400 hover:text-green-300 font-semibold transition-all duration-200">
-                <i class="fas fa-external-link-alt mr-2"></i>Canlı Demo
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Kart 6 - Android Not Defteri -->
-        <div class="project-card glass rounded-2xl overflow-hidden">
-          <div class="project-image-container">
-            <div class="video-container h-48 bg-black relative">
-              <video class="w-full h-full object-cover" muted loop preload="metadata" poster="./images/not.png"
-                id="not-defteri-video">
-                <source src="./videos/Kayıt 2025-08-25 193525.mp4" type="video/mp4">
-              </video>
-              <button class="video-play-btn" onclick="openVideoModal('./videos/Kayıt 2025-08-25 193525.mp4')">
-                <i class="fas fa-play"></i>
-              </button>
-            </div>
-            <div class="project-overlay">
-              <div class="flex flex-wrap gap-2">
-                <span class="tech-badge bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-sm font-semibold">
-                  <i class="fab fa-react mr-1"></i>React Native
-                </span>
-                <span class="tech-badge bg-purple-500/20 text-purple-400 px-3 py-1 rounded-full text-sm font-semibold">
-                  <i class="fas fa-layer-group mr-1"></i>Redux
-                </span>
-                <span class="tech-badge bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm font-semibold">
-                  <i class="fab fa-node-js mr-1"></i>Node.js
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-3 text-white">Android Not Defteri</h3>
-            <p class="text-gray-400 mb-4 leading-relaxed">
-              React Native ile geliştirilmiş mobil uygulama. Real-time senkronizasyon ve offline çalışma desteği.
-            </p>
-
-            <div class="bg-gray-900/20 p-4 rounded-lg mb-4">
-              <h4 class="text-blue-400 font-semibold mb-2">Mobil Özellikler</h4>
-              <ul class="text-gray-300 text-sm space-y-1">
-                <li>• Android uyumluluğu</li>
-                <li>• Offline not alma ve senkronizasyon</li>
-                <li>• Kategori bazlı not organizasyonu</li>
-                <li>• Güvenli veri şifreleme</li>
-              </ul>
-            </div>
-
-            <div class="grid grid-cols-3 gap-3 mb-4">
-              <div class="stat-item bg-gray-800/50 rounded-lg p-3 text-center">
-                <div class="text-lg font-bold text-white">1</div>
-                <div class="text-xs uppercase text-gray-400">Platform</div>
-              </div>
-              <div class="stat-item bg-gray-800/50 rounded-lg p-3 text-center">
-                <div class="text-sm font-bold text-green-400">Real-time</div>
-                <div class="text-xs uppercase text-gray-400">Sync</div>
-              </div>
-              <div class="stat-item bg-gray-800/50 rounded-lg p-3 text-center">
-                <div class="text-sm font-bold text-yellow-400">Offline</div>
-                <div class="text-xs uppercase text-gray-400">Support</div>
-              </div>
-            </div>
-
-            <div class="flex justify-between items-center">
-              <button onclick="openVideoModal('./videos/Kayıt 2025-08-25 193525.mp4')"
-                class="demo-link text-blue-400 hover:text-blue-300 font-semibold transition-all duration-200 cursor-pointer">
-                <i class="fas fa-play-circle mr-2"></i>Video Demo
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Kart 7 - Android Sözlük -->
-        <div class="project-card glass rounded-2xl overflow-hidden">
-          <div class="project-image-container">
-            <div class="video-container h-48 bg-black relative">
-              <video class="w-full h-full object-cover" muted loop preload="metadata" poster="./images/sozluk.png">
-                <source src="./videos/Kayıt 2025-09-26 213613.mp4" type="video/mp4">
-              </video>
-              <button class="video-play-btn" onclick="openVideoModal('./videos/Kayıt 2025-09-26 213613.mp4')">
-                <i class="fas fa-play"></i>
-              </button>
-            </div>
-            <div class="project-overlay">
-              <div class="flex flex-wrap gap-2">
-                <span class="tech-badge bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-sm font-semibold">
-                  <i class="fab fa-react mr-1"></i>React Native
-                </span>
-                <span class="tech-badge bg-purple-500/20 text-purple-400 px-3 py-1 rounded-full text-sm font-semibold">
-                  <i class="fas fa-database mr-1"></i>SQLite
-                </span>
-                <span class="tech-badge bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm font-semibold">
-                  <i class="fas fa-language mr-1"></i>Çift Dil
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-3 text-white">Android Sözlük Uygulaması</h3>
-            <p class="text-gray-400 mb-4 leading-relaxed">
-              Müşterimin isteği üzerine React Native ile geliştirilmiş mobil sözlük uygulaması. Çevrimdışı çeviri ve
-              gerçek zamanlı öneri sistemi
-              ile kullanıcı dostu bir uygulama.
-            </p>
-
-            <div class="bg-gray-900/20 p-4 rounded-lg mb-4">
-              <h4 class="text-purple-400 font-semibold mb-2">Uygulama Özellikleri</h4>
-              <ul class="text-gray-300 text-sm space-y-1">
-                <li>• Türkçe-İngilizce çift yönlü çeviri</li>
-                <li>• Çevrimdışı çeviri ve önbellek desteği</li>
-                <li>• Gerçek zamanlı kelime önerileri</li>
-                <li>• Arama geçmişi ve kullanıcı dostu arayüz</li>
-              </ul>
-            </div>
-
-            <div class="grid grid-cols-3 gap-3 mb-4">
-              <div class="stat-item bg-gray-800/50 rounded-lg p-3 text-center">
-                <div class="text-sm font-bold text-green-400">SQLite</div>
-                <div class="text-xs uppercase text-gray-400">Database</div>
-              </div>
-              <div class="stat-item bg-gray-800/50 rounded-lg p-3 text-center">
-                <div class="text-sm font-bold text-blue-400">Offline</div>
-                <div class="text-xs uppercase text-gray-400">Çeviri</div>
-              </div>
-              <div class="stat-item bg-gray-800/50 rounded-lg p-3 text-center">
-                <div class="text-sm font-bold text-yellow-400">Real-time</div>
-                <div class="text-xs uppercase text-gray-400">Öneriler</div>
-              </div>
-            </div>
-
-            <div class="flex justify-between items-center">
-              <button onclick="openVideoModal('./videos/Kayıt 2025-09-26 213613.mp4')"
-                class="demo-link text-blue-400 hover:text-blue-300 font-semibold transition-all duration-200 cursor-pointer">
-                <i class="fas fa-play-circle mr-2"></i>Video Demo
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Kart 8 - İş İzni Formu -->
-        <div class="project-card glass rounded-2xl overflow-hidden">
-          <div class="project-image-container">
-            <img src="./images/is-isni-img.png" alt="İş İzni Formu Yönetim Sistemi"
-              class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105">
-            <div class="project-overlay">
-              <div class="flex flex-wrap gap-2">
-                <span class="tech-badge bg-red-500/20 text-red-400 px-3 py-1 rounded-full text-sm font-semibold">
-                  <i class="fab fa-laravel mr-1"></i>Laravel
-                </span>
-                <span class="tech-badge bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-sm font-semibold">
-                  <i class="fas fa-file-pdf mr-1"></i>PDF
-                </span>
-                <span class="tech-badge bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm font-semibold">
-                  <i class="fas fa-shield-alt mr-1"></i>RBAC
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-3 text-white">İş İzni Formu Yönetim Sistemi</h3>
-            <p class="text-gray-400 mb-4 leading-relaxed">
-              ISO 45001 ve OSHA standartlarına uygun, iş güvenliği yönetim platformu.
-              4 aşamalı onay süreci ile riskli işlerin güvenli yönetimi.
-            </p>
-
-            <div class="bg-gray-900/20 p-4 rounded-lg mb-4">
-              <h4 class="text-green-400 font-semibold mb-2">Sistem Özellikleri</h4>
-              <ul class="text-gray-300 text-sm space-y-1">
-                <li>• 4 Aşamalı Açılış/Kapatma Onay Süreci</li>
-                <li>• Rol Tabanlı Erişim Kontrolü (RBAC)</li>
-                <li>• Otomatik PDF Oluşturma ve Arşivleme</li>
-                <li>• Real-time Bildirim Sistemi</li>
-                <li>• Detaylı Audit Trail ve Raporlama</li>
-              </ul>
-            </div>
-
-            <div class="grid grid-cols-3 gap-3 mb-4">
-              <div class="stat-item bg-gray-800/50 rounded-lg p-3 text-center">
-                <div class="text-lg font-bold text-green-400">4</div>
-                <div class="text-xs uppercase text-gray-400">Onay Aşaması</div>
-              </div>
-              <div class="stat-item bg-gray-800/50 rounded-lg p-3 text-center">
-                <div class="text-lg font-bold text-blue-400">5</div>
-                <div class="text-xs uppercase text-gray-400">Rol Sistemi</div>
-              </div>
-              <div class="stat-item bg-gray-800/50 rounded-lg p-3 text-center">
-                <div class="text-lg font-bold text-yellow-400">%100</div>
-                <div class="text-xs uppercase text-gray-400">Uyumluluk</div>
-              </div>
-            </div>
-
-            <div class="flex justify-between items-center">
-              <a href="https://hasanaytacdemo.com/" target="_blank"
-                class="demo-link text-green-400 hover:text-green-300 font-semibold transition-all duration-200">
-                <i class="fas fa-external-link-alt mr-2"></i>Canlı Demo
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Kart 9 - Kadim Kitabevi (REVİZE EDİLDİ) -->
-        <div class="project-card glass rounded-2xl overflow-hidden">
-          <div class="project-image-container">
-            <img src="./images/kadimkitabevi.png" alt="Kadim Kitabevi E-Ticaret Platformu"
-              class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
-            <div class="project-overlay">
-              <div class="flex flex-wrap gap-2">
-                <span class="tech-badge bg-red-500/20 text-red-400 px-3 py-1 rounded-full text-sm font-semibold">
-                  <i class="fab fa-laravel mr-1"></i>Laravel
-                </span>
-                <span class="tech-badge bg-amber-500/20 text-amber-400 px-3 py-1 rounded-full text-sm font-semibold">
-                  <i class="fas fa-music mr-1"></i>Müzik
-                </span>
-                <span class="tech-badge bg-cyan-500/20 text-cyan-400 px-3 py-1 rounded-full text-sm font-semibold">
-                  <i class="fas fa-shopping-cart mr-1"></i>E-Ticaret
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-3 text-white">Kadim Kitabevi – E-Ticaret Platformu</h3>
-            <p class="text-gray-400 mb-4 leading-relaxed">
-              Yusuf Kurtoğlu eserlerine özel, mistik temalı e-ticaret platformu. Arka plan müziği,
-              admin panelden yönetilen müzik çalar ve anlık sipariş bildirimleriyle benzersiz bir alışveriş deneyimi.
-            </p>
-
-            <div class="bg-gray-900/20 p-4 rounded-lg mb-4">
-              <h4 class="text-amber-400 font-semibold mb-2">Öne Çıkan Özellikler</h4>
-              <ul class="text-gray-300 text-sm space-y-1">
-                <li>• Müzik yönetimi (upload/external/kapat)</li>
-                <li>• Slider, banner ve içerik yönetimi</li>
-                <li>• Yeni siparişlerde tarayıcı + sesli bildirim</li>
-                <li>• Tailwind kullanıcı dostu tasarım</li>
-                <li>• İyzico + Havale/EFT ödeme desteği</li>
-              </ul>
-            </div>
-
-            <div class="grid grid-cols-3 gap-3 mb-4">
-              <div class="stat-item bg-gray-800/50 rounded-lg p-3 text-center">
-                <div class="text-lg font-bold text-green-400">100%</div>
-                <div class="text-xs uppercase text-gray-400">Mistik Tema</div>
-              </div>
-              <div class="stat-item bg-gray-800/50 rounded-lg p-3 text-center">
-                <div class="text-lg font-bold text-amber-400">Admin</div>
-                <div class="text-xs uppercase text-gray-400">Panel</div>
-              </div>
-              <div class="stat-item bg-gray-800/50 rounded-lg p-3 text-center">
-                <div class="text-lg font-bold text-cyan-400">2</div>
-                <div class="text-xs uppercase text-gray-400">Ödeme Yöntemi</div>
-              </div>
-            </div>
-
-            <div class="flex justify-between items-center">
-              <a href="https://kadimkitabevi.com.tr" target="_blank"
-                class="demo-link text-green-400 hover:text-green-300 font-semibold transition-all duration-200">
-                <i class="fas fa-external-link-alt mr-2"></i>Canlı Demo
-              </a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="text-center mt-12">
-        <a href="https://github.com/mustafaciftc" target="_blank"
-          class="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-3 rounded-full hover:from-blue-600 hover:to-purple-700 transition-all transform hover:scale-105 font-semibold inline-flex items-center">
-          <i class="fab fa-github mr-2"></i>Tüm Projelerim
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <div id="videoModal" class="video-modal">
-    <div class="video-modal-content">
-      <button class="close-modal" onclick="closeVideoModal()">
-        <i class="fas fa-times"></i>
-      </button>
-      <video id="modalVideo" controls>
-        Tarayıcınız video etiketini desteklemiyor.
-      </video>
-    </div>
-  </div>
-
-  <section id="pricing" class="py-20 bg-gray-900/30 reveal">
-    <div class="container mx-auto px-6">
-      <div class="pricing-header">
-        <h2 class="text-5xl font-bold text-center gradient-text mb-4">Şeffaf ve Uygun Fiyatlandırma</h2>
-        <p class="pricing-subtitle">
-          Projenizin kapsamına göre esnek paketler. Sürpriz masraf yok, net ve anlaşılır fiyatlar.
-          <br>
-          <span class="text-sm text-gray-500 mt-2 block">
-            Fiyatlar, projenin özelliklerine ve teslim süresine göre değişiklik gösterebilir.
-          </span>
-        </p>
-      </div>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-        <div class="pricing-card">
-          <div class="text-center mb-6">
-            <div
-              class="w-16 h-16 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
-              <i class="fas fa-rocket text-2xl text-white"></i>
-            </div>
-            <h3 class="text-2xl font-bold text-yellow-400 mb-2">Landing / Tanıtım</h3>
-            <div class="price-tag">₺5.000+</div>
-          </div>
-          <ul class="pricing-features">
-            <li><i class="fas fa-check"></i>1-5 Sayfa özel tasarım</li>
-            <li><i class="fas fa-check"></i>Mobil uyumlu (responsive)</li>
-            <li><i class="fas fa-check"></i>5-7 iş günü teslim</li>
-            <li><i class="fas fa-check"></i>Temel SEO optimizasyonu</li>
-            <li><i class="fas fa-check"></i>Ücretsiz SSL kurulumu</li>
-            <li><i class="fas fa-check"></i>İletişim formu entegrasyonu</li>
-            <li><i class="fas fa-check"></i>10 gün revizyon hakkı</li>
-            <li><i class="fas fa-check"></i>1 ay teknik destek</li>
-          </ul>
-          <a href="https://wa.me/905319583445?text=Merhaba,%20Landing%20-%20Tanıtım%20paketi%20hakkında%20bilgi%20almak%20istiyorum."
-            class="pricing-cta" aria-label="Landing / Tanıtım paketi için teklif al">Teklif Al</a>
-        </div>
-
-        <div class="pricing-card featured">
-          <div class="text-center mb-6">
-            <div
-              class="w-16 h-16 bg-gradient-to-r from-green-400 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-              <i class="fas fa-globe text-2xl text-white"></i>
-            </div>
-            <h3 class="text-2xl font-bold text-green-400 mb-2">Kurumsal Web</h3>
-            <div class="price-tag">₺10.000+</div>
-          </div>
-          <ul class="pricing-features">
-            <li><i class="fas fa-check"></i>Özel tasarım ve kodlama</li>
-            <li><i class="fas fa-check"></i>Kolay yönetim paneli (CMS)</li>
-            <li><i class="fas fa-check"></i>Haber/blog modülü</li>
-            <li><i class="fas fa-check"></i>Gelişmiş SEO optimizasyonu</li>
-            <li><i class="fas fa-check"></i>Google Analytics kurulumu</li>
-            <li><i class="fas fa-check"></i>10-15 iş günü teslim</li>
-            <li><i class="fas fa-check"></i>14 gün revizyon hakkı</li>
-            <li><i class="fas fa-check"></i>45 gün ücretsiz destek</li>
-          </ul>
-          <a href="https://wa.me/905319583445?text=Merhaba,%20Kurumsal%20web%20paketi%20hakkında%20bilgi%20almak%20istiyorum."
-            class="pricing-cta" aria-label="Kurumsal web paketi için teklif al">Teklif Al</a>
-        </div>
-
-        <div class="pricing-card">
-          <div class="text-center mb-6">
-            <div
-              class="w-16 h-16 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-              <i class="fas fa-shopping-cart text-2xl text-white"></i>
-            </div>
-            <h3 class="text-2xl font-bold text-blue-400 mb-2">E-Ticaret</h3>
-            <div class="price-tag">₺15.000+</div>
-          </div>
-          <ul class="pricing-features">
-            <li><i class="fas fa-check"></i>İyzico / PayTR ödeme entegrasyonu</li>
-            <li><i class="fas fa-check"></i>Stok ve sipariş yönetimi</li>
-            <li><i class="fas fa-check"></i>Kargo entegrasyonları</li>
-            <li><i class="fas fa-check"></i>Kullanıcı giriş/kayıt sistemi</li>
-            <li><i class="fas fa-check"></i>Admin paneli ve raporlama</li>
-            <li><i class="fas fa-check"></i>15-20 iş günü teslim</li>
-            <li><i class="fas fa-check"></i>21 gün revizyon hakkı</li>
-            <li><i class="fas fa-check"></i>2 ay ücretsiz destek</li>
-          </ul>
-          <a href="https://wa.me/905319583445?text=Merhaba,%20E-Ticaret%20paketi%20hakkında%20bilgi%20almak%20istiyorum."
-            class="pricing-cta" aria-label="E-Ticaret paketi için teklif al">Teklif Al</a>
-        </div>
-
-        <div class="pricing-card">
-          <div class="text-center mb-6">
-            <div
-              class="w-16 h-16 bg-gradient-to-r from-purple-400 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
-              <i class="fas fa-mobile-alt text-2xl text-white"></i>
-            </div>
-            <h3 class="text-2xl font-bold text-purple-400 mb-2">Mobil Uygulama</h3>
-            <div class="price-tag">₺20.000+</div>
-          </div>
-          <ul class="pricing-features">
-            <li><i class="fas fa-check"></i>React Native geliştirme</li>
-            <li><i class="fas fa-check"></i>Android uyumluluk</li>
-            <li><i class="fas fa-check"></i>API ve backend entegrasyonu</li>
-            <li><i class="fas fa-check"></i>Push bildirim sistemi</li>
-            <li><i class="fas fa-check"></i>Kullanıcı giriş/kayıt sistemi</li>
-            <li><i class="fas fa-check"></i>Mağaza yükleme desteği</li>
-            <li><i class="fas fa-check"></i>30-45 iş günü teslim</li>
-            <li><i class="fas fa-check"></i>3 ay bakım desteği</li>
-          </ul>
-          <a href="https://wa.me/905319583445?text=Merhaba,%20Mobil%20uygulama%20paketi%20hakkında%20bilgi%20almak%20istiyorum."
-            class="pricing-cta" aria-label="Mobil uygulama paketi için teklif al">Teklif Al</a>
-        </div>
-      </div>
-
-      <div class="pricing-guarantee">
-        <div class="flex items-center justify-center mb-4">
-          <i class="fas fa-shield-alt text-4xl text-green-400 mr-4"></i>
-          <div>
-            <h3 class="text-2xl font-bold text-green-400">Kalite ve Güven Garantisi</h3>
-            <p class="text-gray-300">Tüm projelerde memnuniyet garantisi</p>
-          </div>
-        </div>
-        <div class="grid md:grid-cols-3 gap-6 mt-8">
-          <div class="text-center">
-            <i class="fas fa-undo text-2xl text-blue-400 mb-2"></i>
-            <h4 class="font-semibold text-blue-400 mb-1">Revizyon Süresi</h4>
-            <p class="text-sm text-gray-400">10-21 gün ücretsiz düzeltme</p>
-          </div>
-          <div class="text-center">
-            <i class="fas fa-credit-card text-2xl text-purple-400 mb-2"></i>
-            <h4 class="font-semibold text-purple-400 mb-1">Esnek Ödeme</h4>
-            <p class="text-sm text-gray-400">%50 başlangıç - %30 ara - %20 teslim</p>
-          </div>
-          <div class="text-center">
-            <i class="fas fa-headset text-2xl text-green-400 mb-2"></i>
-            <h4 class="font-semibold text-green-400 mb-1">Teslim Sonrası Destek</h4>
-            <p class="text-sm text-gray-400">30-90 gün teknik destek</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="text-center mt-12">
-        <p class="text-gray-400 mb-6">Özel ihtiyaçlar için kişiye özel teklifler sunuyoruz.</p>
-        <a href="https://wa.me/905319583445?text=Merhaba,%20web%20sitenizden%20ulaşıyorum.%20Projem%20için%20özel%20fiyat%20almak%20istiyorum."
-          class="bg-gradient-to-r from-green-500 to-blue-500 text-white px-10 py-4 rounded-full hover:from-green-600 hover:to-blue-600 transition-all transform hover:scale-105 text-lg font-semibold"
-          aria-label="Ücretsiz fiyat teklifi al">
-          <i class="fas fa-calculator mr-2"></i>Ücretsiz Fiyat Teklifi Al
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="py-20 bg-gradient-to-br relative overflow-hidden reveal">
-    <div class="absolute inset-0 opacity-10">
-      <div
-        class="absolute top-1/4 left-1/4 w-72 h-72 bg-blue-500 rounded-full mix-blend-soft-light filter blur-3xl animate-pulse">
-      </div>
-      <div
-        class="absolute bottom-1/3 right-1/4 w-96 h-96 bg-green-500 rounded-full mix-blend-soft-light filter blur-3xl animate-pulse animation-delay-2000">
-      </div>
-    </div>
-
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
-
-      <div class="text-center mb-16">
-        <h2 class="text-6xl md:text-7xl font-extrabold text-white leading-tight mb-6 tracking-wide drop-shadow-lg">
-          Geleceğe Birlikte Kodlayalım
-        </h2>
-        <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto font-light leading-relaxed">
-          Yeni bir fikir, yeni bir proje mi planlıyorsunuz? Ücretsiz ön görüşme ve profesyonel danışmanlık hizmetimden
-          yararlanmak için formu doldurun veya direkt olarak bana ulaşın.
-        </p>
-      </div>
-
-      <div class="grid lg:grid-cols-2 gap-16 items-start">
-
-        <div
-          class="lg:order-2 bg-gray-800/40 backdrop-blur-lg p-8 md:p-12 rounded-4xl shadow-2xl border border-gray-700/30">
-          <div class="mb-8">
-            <h3 class="text-4xl font-semibold text-white mb-2 leading-tight">Proje Başlangıç Formu</h3>
-            <p class="text-gray-300 font-light text-lg">Hızlı ve detaylı bir teklif almanız için lütfen formu eksiksiz
-              doldurun.</p>
-          </div>
-
-          <form id="contact-form" action="https://formspree.io/f/mpwdealb" method="POST" class="space-y-8">
-            <div class="grid md:grid-cols-2 gap-8">
-              <div class="form-group">
-                <label for="name" class="block mb-2 text-gray-300 text-sm font-medium">Adınız Soyadınız *</label>
-                <input type="text" id="name" name="name" required
-                  class="w-full p-4 bg-gray-700/50 border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300">
-              </div>
-              <div class="form-group">
-                <label for="email" class="block mb-2 text-gray-300 text-sm font-medium">E-posta Adresiniz *</label>
-                <input type="email" id="email" name="email" required
-                  class="w-full p-4 bg-gray-700/50 border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300">
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="phone" class="block mb-2 text-gray-300 text-sm font-medium">Telefon Numaranız</label>
-              <input type="tel" id="phone" name="phone"
-                class="w-full p-4 bg-gray-700/50 border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300">
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-8">
-              <div class="form-group">
-                <label for="project-type" class="block mb-2 text-gray-300 text-sm font-medium">Proje Türü *</label>
-                <select id="project-type" name="project-type" required
-                  class="w-full p-4 bg-gray-700/50 border border-gray-600 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300">
-                  <option value="" disabled selected>Seçiniz</option>
-                  <option value="Landing Page">Landing Page / Tek Sayfalık Web Sitesi</option>
-                  <option value="Kurumsal Web">Kurumsal Web Sitesi</option>
-                  <option value="E-Ticaret">E-Ticaret Mağazası</option>
-                  <option value="Mobil Uygulama">Mobil Uygulama (Android)</option>
-                  <option value="API Entegrasyon">API Entegrasyonu / Özel Yazılım</option>
-                  <option value="Diğer">Diğer</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="budget" class="block mb-2 text-gray-300 text-sm font-medium">Proje Bütçeniz</label>
-                <select id="budget" name="budget"
-                  class="w-full p-4 bg-gray-700/50 border border-gray-600 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300">
-                  <option value="" disabled selected>Bütçe aralığı seçin</option>
-                  <option value="5.000 TL以下">5.000 TL'ye kadar</option>
-                  <option value="5.000 - 10.000 TL">5.000 - 10.000 TL</option>
-                  <option value="10.000 - 20.000 TL">10.000 - 20.000 TL</option>
-                  <option value="20.000 - 35.000 TL">20.000 - 35.000 TL</option>
-                  <option value="35.000 TL以上">35.000 TL ve üzeri</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="message" class="block mb-2 text-gray-300 text-sm font-medium">Proje Detayları *</label>
-              <textarea id="message" name="message" rows="6" required
-                placeholder="Projenizin amacı, hedef kitlesi, beklenen özellikler, referans siteler ve zamanlama hakkında bilgi verin..."
-                class="w-full p-4 bg-gray-700/50 border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"></textarea>
-            </div>
-
-            <button type="submit" id="submit-button"
-              class="w-full bg-gradient-to-r from-blue-600 to-blue-800 text-white font-bold text-lg px-8 py-4 rounded-xl hover:from-blue-700 hover:to-blue-900 transition-all duration-300 transform hover:-translate-y-1 shadow-2xl flex items-center justify-center space-x-3">
-              <span>Teklif İsteği Gönder</span>
-              <i class="fas fa-paper-plane text-xl"></i>
-            </button>
-
-            <div id="form-message" class="mt-4 p-4 rounded-xl text-center hidden"></div>
-          </form>
-        </div>
-
-        <div class="lg:order-1 space-y-12">
-          <div class="glass p-8 rounded-4xl shadow-xl border border-gray-700/30">
-            <h3 class="text-3xl font-semibold mb-8 text-white border-l-4 border-green-400 pl-4 leading-tight">İletişim
-              Bilgilerim</h3>
-
-            <div class="space-y-8">
-              <div class="flex items-start space-x-6 group">
-                <div
-                  class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl flex items-center justify-center text-white text-3xl shadow-lg group-hover:scale-110 transition-transform duration-300">
-                  <i class="fas fa-envelope"></i>
+<body>
+    <div id="page-wraper">
+        <!-- Sidebar Menu -->
+        <div class="responsive-nav">
+            <i class="fa fa-bars" id="menu-toggle"></i>
+            <div id="menu" class="menu">
+                <i class="fa fa-times" id="menu-close"></i>
+                <div class="container">
+                    <div class="image">
+                        <a href="#"><img src="/images/pp2.jpg" alt="Mustafa Çiftci" /></a>
+                    </div>
+                    <div class="author-content">
+                        <h4>Mustafa Çiftci</h4>
+                        <span>Full Stack Developer</span>
+                    </div>
+                    <nav class="main-nav" role="navigation">
+                        <ul class="main-menu">
+                            <li><a href="#section1">Hakkımda</a></li>
+                            <li><a href="#section2">Yeteneklerim</a></li>
+                            <li><a href="#section3">Projelerim</a></li>
+                            <li><a href="#section4">Fiyatlandırma</a></li>
+                            <li><a href="#section5">İletişim</a></li>
+                        </ul>
+                    </nav>
+                    <div class="social-network">
+                        <ul class="soial-icons">
+                            <li>
+                                <a href="https://linkedin.com/in/mustafa-%C3%A7iftci-966b90262/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/mustafaciftc" target="_blank"><i class="fab fa-github"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://wa.me/905319583445" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                            </li>
+                            <li>
+                                <a href="mailto:mciftci19891903@gmail.com"><i class="fa fa-envelope"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="copyright-text">
+                        <p>Copyright 2026 Mustafa Çiftci</p>
+                    </div>
                 </div>
-                <div>
-                  <p class="font-bold text-gray-200 text-lg md:text-xl mb-1">E-posta</p>
-                  <a href="mailto:mciftci19891903@gmail.com"
-                    class="text-gray-300 hover:text-blue-400 transition-colors duration-300 text-base md:text-lg">
-                    info@mustafaciftci.dev
-                  </a>
-                  <p class="text-sm text-gray-400 mt-1">Ortalama yanıt süresi: 4 saat içinde</p>
-                </div>
-              </div>
-
-              <div class="flex items-start space-x-6 group">
-                <div
-                  class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-green-500 to-green-700 rounded-2xl flex items-center justify-center text-white text-3xl shadow-lg group-hover:scale-110 transition-transform duration-300">
-                  <i class="fas fa-phone"></i>
-                </div>
-                <div>
-                  <p class="font-bold text-gray-200 text-lg md:text-xl mb-1">Telefon & WhatsApp</p>
-                  <a href="tel:+905319583445"
-                    class="text-gray-300 hover:text-green-400 transition-colors duration-300 text-base md:text-lg">
-                    +90 531 958 34 45
-                  </a>
-                  <p class="text-sm text-gray-400 mt-1">Hafta içi 09:00 - 18:00 arası müsaitim</p>
-                </div>
-              </div>
-
-              <div class="flex items-start space-x-6 group">
-                <div
-                  class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl flex items-center justify-center text-white text-3xl shadow-lg group-hover:scale-110 transition-transform duration-300">
-                  <i class="fab fa-linkedin-in"></i>
-                </div>
-                <div>
-                  <p class="font-bold text-gray-200 text-lg md:text-xl mb-1">LinkedIn</p>
-                  <a href="https://www.linkedin.com/in/mustafa-%C3%A7iftci-966b90262/" target="_blank"
-                    class="text-gray-300 hover:text-blue-400 transition-colors duration-300 text-base md:text-lg">
-                    Profesyonel profilimi inceleyin
-                  </a>
-                  <p class="text-sm text-gray-400 mt-1">Mesajlarınızı buradan da cevaplayabilirim</p>
-                </div>
-              </div>
             </div>
-          </div>
+        </div>
 
-          <div class="grid sm:grid-cols-2 gap-8">
-            <div class="glass p-8 rounded-4xl shadow-xl border border-gray-700/30">
-              <h3 class="text-2xl font-semibold mb-6 text-white leading-tight">Sosyal Medya Hesaplarım</h3>
-              <div class="flex space-x-4">
-                <a href="https://www.linkedin.com/in/mustafa-%C3%A7iftci-966b90262/" target="_blank"
-                  class="w-14 h-14 bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl flex items-center justify-center text-white hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl">
-                  <i class="fab fa-linkedin-in text-xl"></i>
+        <!-- About Section -->
+        <section class="section about-me" data-section="section1">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>Hakkımda</h2>
+                    <div class="line-dec"></div>
+                    <span>3+ yıl deneyimli Full Stack Developer olarak Laravel, Node.js, React ile e-ticaret ve web uygulamaları geliştiriyorum.</span>
+                </div>
+                
+                <div class="about-content">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="left-image">
+                                <img src="assets/images/pro.png" alt="Çalışma Ortamı" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="right-text">
+                                <h4>Profesyonel Yolculuğum</h4>
+                                <p>
+                                    Yazılım geliştirme sektöründe 3 yılı aşkın süredir edindiğim profesyonel deneyimle, Full Stack Developer olarak
+                                    hem frontend hem de backend teknolojilerinde uzmanlık geliştirdim. E-ticaret çözümleri, kurumsal web uygulamaları
+                                    ve cross-platform mobil uygulama geliştirme alanlarında özelleşmiş bulunmaktayım.
+                                </p>
+                                <div class="white-button">
+                                    <a href="#section5">İletişime Geç</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row mt-5">
+                        <div class="col-md-6">
+                            <div class="left-text">
+                                <h4>Neden Beni Seçmelisiniz?</h4>
+                                <div class="features-list">
+                                    <div class="feature-item">
+                                        <i class="fas fa-bolt"></i>
+                                        <div>
+                                            <h5>Hızlı Çözümler</h5>
+                                            <p>Projelerinizi kısa sürede ve en yüksek kalitede teslim ediyorum.</p>
+                                        </div>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-headset"></i>
+                                        <div>
+                                            <h5>7/24 Destek</h5>
+                                            <p>Proje sonrası da ihtiyaç duyduğunuz her an yanınızdayım.</p>
+                                        </div>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-rocket"></i>
+                                        <div>
+                                            <h5>Performans</h5>
+                                            <p>%40'a varan performans artışı ile daha hızlı web siteleri.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="right-image">
+                                <img src="assets/images/neden.png" alt="Teknoloji Stack" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="section my-services" data-section="section2">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>Teknik Yeteneklerim</h2>
+                    <div class="line-dec"></div>
+                    <span>Modern web teknolojileri ve araçları konusundaki uzmanlığım</span>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="service-item">
+                            <div class="first-service-icon service-icon"></div>
+                            <h4>Backend Geliştirme</h4>
+                            <p>
+                                Laravel & PHP (%90), Node.js & Express (%85), MySQL & MongoDB (%85) ile güçlü ve ölçeklenebilir backend sistemleri.
+                            </p>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="service-item">
+                            <div class="second-service-icon service-icon"></div>
+                            <h4>Frontend Geliştirme</h4>
+                            <p>
+                                React & React Native (%80), HTML5, CSS3, JavaScript ES6+ ile modern ve responsive kullanıcı arayüzleri.
+                            </p>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="service-item">
+                            <div class="third-service-icon service-icon"></div>
+                            <h4>E-Ticaret Çözümleri</h4>
+                            <p>
+                                İyzico/PayTR entegrasyonlu, admin panelli, stok yönetimli kapsamlı e-ticaret sistemleri.
+                            </p>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="service-item">
+                            <div class="fourth-service-icon service-icon"></div>
+                            <h4>Mobil Uygulama</h4>
+                            <p>
+                                React Native ile cross-platform mobil uygulama geliştirme, API entegrasyonu ve store yayınlama.
+                            </p>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tech-stack mt-5">
+                    <h4 class="text-center mb-4">Teknoloji Stack'im</h4>
+                    <div class="row text-center">
+                        <div class="col-md-2 col-4">
+                            <div class="tech-item">
+                                <i class="fab fa-laravel fa-3x text-danger"></i>
+                                <p>Laravel</p>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-4">
+                            <div class="tech-item">
+                                <i class="fab fa-node-js fa-3x text-success"></i>
+                                <p>Node.js</p>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-4">
+                            <div class="tech-item">
+                                <i class="fab fa-react fa-3x text-info"></i>
+                                <p>React</p>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-4">
+                            <div class="tech-item">
+                                <i class="fas fa-database fa-3x text-primary"></i>
+                                <p>MySQL</p>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-4">
+                            <div class="tech-item">
+                                <i class="fab fa-git-alt fa-3x text-warning"></i>
+                                <p>Git</p>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-4">
+                            <div class="tech-item">
+                                <i class="fab fa-bootstrap fa-3x text-purple"></i>
+                                <p>Bootstrap</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="section my-work" data-section="section3">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>Projelerim</h2>
+                    <div class="line-dec"></div>
+                    <span>Modern teknolojilerle geliştirdiğim, performans odaklı web ve mobil uygulamalar</span>
+                </div>
+                
+                <div class="row">
+                    <div class="isotope-wrapper">
+                        <form class="isotope-toolbar">
+                            <label>
+                                <input type="radio" data-type="*" checked="" name="isotope-filter" />
+                                <span>Tümü</span>
+                            </label>
+                            <label>
+                                <input type="radio" data-type="ecommerce" name="isotope-filter" />
+                                <span>E-Ticaret</span>
+                            </label>
+                            <label>
+                                <input type="radio" data-type="web" name="isotope-filter" />
+                                <span>Web Uygulama</span>
+                            </label>
+                            <label>
+                                <input type="radio" data-type="mobile" name="isotope-filter" />
+                                <span>Mobil</span>
+                            </label>
+                        </form>
+                        
+                        <div class="isotope-box">
+                            <!-- Project 1 -->
+                            <div class="isotope-item" data-type="ecommerce">
+                                <figure class="snip1321">
+                                    <img src="/images/market.png" alt="Market POS Sistemi" />
+                                    <figcaption>
+                                        <a href="/images/market.png" data-lightbox="image-1" data-title="Market POS Sistemi">
+                                            <i class="fa fa-search"></i>
+                                        </a>
+                                        <h4>Market POS & Veresiye Sistemi</h4>
+                                        <span>Laravel, MySQL, Bootstrap</span>
+                                        <p>Stok yönetimi, satış raporlama ve veresiye takip özellikleri</p>
+                                        <a href="https://everesiyedefteri.com.tr/" target="_blank" class="demo-link">
+                                            <i class="fas fa-external-link-alt mr-1"></i>Canlı Demo
+                                        </a>
+                                    </figcaption>
+                                </figure>
+                            </div>
+
+                            <!-- Project 2 -->
+                            <div class="isotope-item" data-type="ecommerce">
+                                <figure class="snip1321">
+                                    <img src="/images/stok.png" alt="E-Ticaret Platformu" />
+                                    <figcaption>
+                                        <a href="/images/stok.png" data-lightbox="image-1" data-title="E-Ticaret Platformu">
+                                            <i class="fa fa-search"></i>
+                                        </a>
+                                        <h4>E-Ticaret & Stok Takip</h4>
+                                        <span>Laravel, İyzico, Bootstrap</span>
+                                        <p>Kapsamlı e-ticaret çözümü ve admin paneli</p>
+                                        <a href="https://proje.doguweb.com.tr/" target="_blank" class="demo-link">
+                                            <i class="fas fa-external-link-alt mr-1"></i>Canlı Demo
+                                        </a>
+                                    </figcaption>
+                                </figure>
+                            </div>
+
+                            <!-- Project 3 -->
+                            <div class="isotope-item" data-type="web">
+                                <figure class="snip1321">
+                                    <img src="/images/forma.png" alt="Forma Satış Platformu" />
+                                    <figcaption>
+                                        <a href="/images/forma.png" data-lightbox="image-1" data-title="Forma Satış Platformu">
+                                            <i class="fa fa-search"></i>
+                                        </a>
+                                        <h4>Forma Satış Platformu</h4>
+                                        <span>Laravel, Google OAuth, Multi-Language</span>
+                                        <p>2 dilde hizmet veren forma satış platformu</p>
+                                        <a href="https://satisformasi.doguweb.com.tr/" target="_blank" class="demo-link">
+                                            <i class="fas fa-external-link-alt mr-1"></i>Canlı Demo
+                                        </a>
+                                    </figcaption>
+                                </figure>
+                            </div>
+
+                            <!-- Project 4 -->
+                            <div class="isotope-item" data-type="web">
+                                <figure class="snip1321">
+                                    <img src="/images/fikirmax.png" alt="Dijital Pazarlama Sitesi" />
+                                    <figcaption>
+                                        <a href="/images/fikirmax.png" data-lightbox="image-1" data-title="Dijital Pazarlama Sitesi">
+                                            <i class="fa fa-search"></i>
+                                        </a>
+                                        <h4>Dijital Pazarlama Ajansı</h4>
+                                        <span>HTML5, JavaScript, Tailwind CSS</span>
+                                        <p>Modern tasarım ile dijital pazarlama sitesi</p>
+                                        <a href="https://fikirmax.com" target="_blank" class="demo-link">
+                                            <i class="fas fa-external-link-alt mr-1"></i>Canlı Demo
+                                        </a>
+                                    </figcaption>
+                                </figure>
+                            </div>
+
+                            <!-- Project 5 -->
+                            <div class="isotope-item" data-type="mobile">
+                                <figure class="snip1321">
+                                    <img src="/images/not.png" alt="Android Not Defteri" />
+                                    <figcaption>
+                                        <a href="/images/not.png" data-lightbox="image-1" data-title="Android Not Defteri">
+                                            <i class="fa fa-search"></i>
+                                        </a>
+                                        <h4>Android Not Defteri</h4>
+                                        <span>React Native, Node.js, Redux</span>
+                                        <p>React Native ile mobil not defteri uygulaması</p>
+                                        <button class="demo-link video-btn" data-video="videos/not-defteri.mp4">
+                                            <i class="fas fa-play-circle mr-1"></i>Video Demo
+                                        </button>
+                                    </figcaption>
+                                </figure>
+                            </div>
+
+                            <!-- Project 6 -->
+                            <div class="isotope-item" data-type="mobile">
+                                <figure class="snip1321">
+                                    <img src="/images/sozluk.png" alt="Android Sözlük" />
+                                    <figcaption>
+                                        <a href="/images/sozluk.png" data-lightbox="image-1" data-title="Android Sözlük">
+                                            <i class="fa fa-search"></i>
+                                        </a>
+                                        <h4>Android Sözlük Uygulaması</h4>
+                                        <span>React Native, SQLite, Çift Dil</span>
+                                        <p>Türkçe-İngilizce çevrimdışı sözlük uygulaması</p>
+                                        <button class="demo-link video-btn" data-video="videos/sozluk.mp4">
+                                            <i class="fas fa-play-circle mr-1"></i>Video Demo
+                                        </button>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-5">
+                    <a href="https://github.com/mustafaciftc" target="_blank" class="btn btn-primary">
+                        <i class="fab fa-github mr-2"></i>Tüm Projelerim
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="section pricing-section" data-section="section4">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>Şeffaf ve Uygun Fiyatlandırma</h2>
+                    <div class="line-dec"></div>
+                    <span>Projenizin kapsamına göre esnek paketler. Sürpriz masraf yok, net ve anlaşılır fiyatlar.</span>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="pricing-card">
+                            <div class="pricing-header">
+                                <div class="pricing-icon">
+                                    <i class="fas fa-rocket"></i>
+                                </div>
+                                <h3>Landing / Tanıtım</h3>
+                                <div class="price">₺5.000+</div>
+                            </div>
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check"></i>1-5 Sayfa özel tasarım</li>
+                                <li><i class="fas fa-check"></i>Mobil uyumlu (responsive)</li>
+                                <li><i class="fas fa-check"></i>5-7 iş günü teslim</li>
+                                <li><i class="fas fa-check"></i>Temel SEO optimizasyonu</li>
+                                <li><i class="fas fa-check"></i>Ücretsiz SSL kurulumu</li>
+                                <li><i class="fas fa-check"></i>10 gün revizyon hakkı</li>
+                            </ul>
+                            <a href="https://wa.me/905319583445" target="_blank" class="btn btn-pricing">
+                                Teklif Al
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3">
+                        <div class="pricing-card featured">
+                            <div class="pricing-header">
+                                <div class="pricing-icon">
+                                    <i class="fas fa-globe"></i>
+                                </div>
+                                <h3>Kurumsal Web</h3>
+                                <div class="price">₺10.000+</div>
+                            </div>
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check"></i>Özel tasarım ve kodlama</li>
+                                <li><i class="fas fa-check"></i>Kolay yönetim paneli (CMS)</li>
+                                <li><i class="fas fa-check"></i>Haber/blog modülü</li>
+                                <li><i class="fas fa-check"></i>Gelişmiş SEO optimizasyonu</li>
+                                <li><i class="fas fa-check"></i>Google Analytics kurulumu</li>
+                                <li><i class="fas fa-check"></i>14 gün revizyon hakkı</li>
+                            </ul>
+                            <a href="https://wa.me/905319583445" target="_blank" class="btn btn-pricing">
+                                Teklif Al
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3">
+                        <div class="pricing-card">
+                            <div class="pricing-header">
+                                <div class="pricing-icon">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </div>
+                                <h3>E-Ticaret</h3>
+                                <div class="price">₺15.000+</div>
+                            </div>
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check"></i>İyzico / PayTR ödeme entegrasyonu</li>
+                                <li><i class="fas fa-check"></i>Stok ve sipariş yönetimi</li>
+                                <li><i class="fas fa-check"></i>Kargo entegrasyonları</li>
+                                <li><i class="fas fa-check"></i>Kullanıcı giriş/kayıt sistemi</li>
+                                <li><i class="fas fa-check"></i>Admin paneli ve raporlama</li>
+                                <li><i class="fas fa-check"></i>21 gün revizyon hakkı</li>
+                            </ul>
+                            <a href="https://wa.me/905319583445" target="_blank" class="btn btn-pricing">
+                                Teklif Al
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3">
+                        <div class="pricing-card">
+                            <div class="pricing-header">
+                                <div class="pricing-icon">
+                                    <i class="fas fa-mobile-alt"></i>
+                                </div>
+                                <h3>Mobil Uygulama</h3>
+                                <div class="price">₺20.000+</div>
+                            </div>
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check"></i>React Native geliştirme</li>
+                                <li><i class="fas fa-check"></i>Android uyumluluk</li>
+                                <li><i class="fas fa-check"></i>API ve backend entegrasyonu</li>
+                                <li><i class="fas fa-check"></i>Push bildirim sistemi</li>
+                                <li><i class="fas fa-check"></i>Kullanıcı giriş/kayıt sistemi</li>
+                                <li><i class="fas fa-check"></i>3 ay bakım desteği</li>
+                            </ul>
+                            <a href="https://wa.me/905319583445" target="_blank" class="btn btn-pricing">
+                                Teklif Al
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="pricing-guarantee text-center mt-5">
+                    <h4><i class="fas fa-shield-alt mr-2"></i>Kalite ve Güven Garantisi</h4>
+                    <div class="row mt-4">
+                        <div class="col-md-4">
+                            <div class="guarantee-item">
+                                <i class="fas fa-undo"></i>
+                                <h5>Revizyon Süresi</h5>
+                                <p>10-21 gün ücretsiz düzeltme</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="guarantee-item">
+                                <i class="fas fa-credit-card"></i>
+                                <h5>Esnek Ödeme</h5>
+                                <p>%50 başlangıç - %30 ara - %20 teslim</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="guarantee-item">
+                                <i class="fas fa-headset"></i>
+                                <h5>Teslim Sonrası Destek</h5>
+                                <p>30-90 gün teknik destek</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section contact-me" data-section="section5">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>İletişim</h2>
+                    <div class="line-dec"></div>
+                    <span>Yeni bir proje mi planlıyorsunuz? Ücretsiz ön görüşme için benimle iletişime geçin.</span>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="contact-info">
+                            <h3>İletişim Bilgilerim</h3>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <h5>E-posta</h5>
+                                    <a href="mailto:mciftci19891903@gmail.com">mciftci19891903@gmail.com</a>
+                                    <p class="small">Ortalama yanıt süresi: 4 saat</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <h5>Telefon & WhatsApp</h5>
+                                    <a href="tel:+905319583445">+90 531 958 34 45</a>
+                                    <p class="small">Hafta içi 09:00 - 18:00</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fab fa-linkedin"></i>
+                                <div>
+                                    <h5>LinkedIn</h5>
+                                    <a href="https://linkedin.com/in/mustafa-%C3%A7iftci-966b90262/" target="_blank">Profili İncele</a>
+                                </div>
+                            </div>
+                            
+                            <div class="social-links mt-4">
+                                <a href="https://linkedin.com/in/mustafa-%C3%A7iftci-966b90262/" target="_blank" class="social-link">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="https://github.com/mustafaciftc" target="_blank" class="social-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://wa.me/905319583445" target="_blank" class="social-link">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <form id="contact" action="https://formspree.io/f/mpwdealb" method="POST">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <fieldset>
+                                        <input name="name" type="text" class="form-control" id="name" placeholder="Adınız Soyadınız" required="" />
+                                    </fieldset>
+                                </div>
+                                <div class="col-md-6">
+                                    <fieldset>
+                                        <input name="email" type="email" class="form-control" id="email" placeholder="E-posta Adresiniz" required="" />
+                                    </fieldset>
+                                </div>
+                                <div class="col-md-12">
+                                    <fieldset>
+                                        <input name="subject" type="text" class="form-control" id="subject" placeholder="Konu" required="" />
+                                    </fieldset>
+                                </div>
+                                <div class="col-md-12">
+                                    <fieldset>
+                                        <textarea name="message" rows="6" class="form-control" id="message" placeholder="Proje detaylarınızı buraya yazın..." required=""></textarea>
+                                    </fieldset>
+                                </div>
+                                <div class="col-md-12">
+                                    <fieldset>
+                                        <button type="submit" id="form-submit" class="button">
+                                            Mesaj Gönder
+                                        </button>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- WhatsApp Widget -->
+        <div id="whatsapp-widget">
+            <div id="whatsapp-toggle">
+                <i class="fab fa-whatsapp"></i>
+            </div>
+            <div id="whatsapp-popup">
+                <h4>WhatsApp ile İletişim</h4>
+                <p>Hemen mesaj gönderin</p>
+                <a href="https://wa.me/905319583445" target="_blank" class="btn btn-whatsapp">
+                    <i class="fab fa-whatsapp mr-2"></i>Mesaj Gönder
                 </a>
-                <a href="https://github.com/mustafaciftc" target="_blank"
-                  class="w-14 h-14 bg-gradient-to-br from-gray-700 to-gray-900 rounded-xl flex items-center justify-center text-white hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl">
-                  <i class="fab fa-github text-xl"></i>
-                </a>
-                <a href="https://wa.me/905319583445" target="_blank"
-                  class="w-14 h-14 bg-gradient-to-br from-green-500 to-green-700 rounded-xl flex items-center justify-center text-white hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl">
-                  <i class="fab fa-whatsapp text-xl"></i>
-                </a>
-              </div>
             </div>
-
-            <div class="glass p-8 rounded-4xl shadow-xl border border-l-4 border-purple-500 border-gray-700/30">
-              <h3 class="text-2xl font-semibold mb-4 text-white leading-tight">İş Ortaklığı Teklifleri</h3>
-              <p class="text-gray-300 mb-4 font-light">
-                Dijital ajanslar ve freelance tasarımcılar ile yaratıcı iş birliklerine açığım.
-              </p>
-              <a href="mailto:mciftci19891903@gmail.com?subject=İş Ortaklığı Teklifi"
-                class="inline-flex items-center text-purple-400 hover:text-purple-300 transition-colors duration-300">
-                <span>Teklif gönder</span>
-                <i class="fas fa-arrow-right ml-2 text-sm"></i>
-              </a>
-            </div>
-          </div>
         </div>
-      </div>
     </div>
-  </section>
 
-  <div id="whatsapp-widget" class="fixed bottom-6 right-6 z-50">
-    <div class="relative">
-      <div id="whatsapp-toggle"
-        class="w-14 h-14 bg-green-500 rounded-full flex items-center justify-center cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110">
-        <i class="fab fa-whatsapp text-white text-2xl"></i>
-      </div>
-
-      <div id="whatsapp-popup"
-        class="absolute bottom-16 right-0 w-80 glass rounded-2xl p-4 shadow-xl opacity-0 invisible transition-all duration-300 transform translate-y-4">
-        <div class="flex items-center mb-4">
-          <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-3">
-            <i class="fab fa-whatsapp text-green-500 text-xl"></i>
-          </div>
-          <div>
-            <h3 class="font-semibold text-white">WhatsApp ile İletişim</h3>
-            <p class="text-sm text-gray-300">Hemen mesaj gönderin</p>
-          </div>
-          <button id="close-whatsapp" class="ml-auto text-gray-400 hover:text-white">
-            <i class="fas fa-times"></i>
-          </button>
+    <!-- Video Modal -->
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <video id="modalVideo" controls>
+                Tarayıcınız video etiketini desteklemiyor.
+            </video>
         </div>
-
-        <p class="text-sm text-gray-300 mb-4">Merhaba, bir proje hakkında görüşmek istiyorum.</p>
-
-        <a href="https://wa.me/905319583445?text=Merhaba,%20web%20sitenizden%20ulaşıyorum.%20Bir%20proje%20hakkında%20görüşmek%20istiyorum."
-          target="_blank"
-          class="block w-full bg-green-600 hover:bg-green-700 text-white text-center py-3 rounded-lg transition-all duration-300 flex items-center justify-center">
-          <i class="fab fa-whatsapp mr-2"></i> Hemen Mesaj Gönder
-        </a>
-
-        <p class="text-xs text-gray-400 mt-3 text-center">7/24 en kısa sürede dönüş yapıyorum</p>
-      </div>
     </div>
-  </div>
 
-  <script src="./js/script.js"></script>
+    <!-- Scripts -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/isotope.min.js"></script>
+    <script src="assets/js/owl-carousel.js"></script>
+    <script src="assets/js/lightbox.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="js/script.js"></script>
+    
 </body>
-
 </html>

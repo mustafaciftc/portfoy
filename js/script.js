@@ -1,169 +1,107 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const menuToggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const menuOverlay = document.getElementById('menu-overlay');
-    let menuIcon;
+// DOM yüklendiğinde çalışacak kodlar
+document.addEventListener('DOMContentLoaded', function() {
+    // Typing effect başlat
+    initTypingEffect();
+    
+    // Scroll animasyonları
+    initScrollAnimations();
+    
+    // Form gönderimi
+    initContactForm();
+    
+    // Isotope filtreleme
+    initIsotope();
+    
+    // Smooth scroll
+    initSmoothScroll();
+    
+    // Video modal kontrolleri
+    initVideoModal();
+    
+    // WhatsApp widget
+    initWhatsAppWidget();
+    
+    // Sidebar navigasyon aktif bölüm takibi
+    initSectionTracker();
+});
 
-    if (menuToggle) {
-        menuIcon = menuToggle.querySelector('i');
+// Typing Effect
+function initTypingEffect() {
+    const typedTextSpan = document.querySelector("#typed-text");
+    if (!typedTextSpan) return;
+    
+    const textArray = ["Full Stack Developer", "Web Geliştirici", "Mobil Uygulama Geliştirici", "E-Ticaret Uzmanı"];
+    const typingDelay = 100;
+    const erasingDelay = 50;
+    const newTextDelay = 2000;
+    let textArrayIndex = 0;
+    let charIndex = 0;
 
-        function toggleMenu() {
-            const isOpen = mobileMenu.classList.contains('menu-open');
-            if (isOpen) {
-                mobileMenu.classList.remove('menu-open');
-                menuOverlay.classList.remove('active');
-                if (menuIcon) {
-                    menuIcon.classList.remove('fa-times');
-                    menuIcon.classList.add('fa-bars');
-                }
-                document.body.classList.remove('menu-open');
-                document.body.style.overflow = 'auto';
-            } else {
-                mobileMenu.classList.add('menu-open');
-                menuOverlay.classList.add('active');
-                if (menuIcon) {
-                    menuIcon.classList.remove('fa-bars');
-                    menuIcon.classList.add('fa-times');
-                }
-                document.body.classList.add('menu-open');
-                document.body.style.overflow = 'hidden';
-            }
+    function type() {
+        if (charIndex < textArray[textArrayIndex].length) {
+            typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+            charIndex++;
+            setTimeout(type, typingDelay);
+        } else {
+            setTimeout(erase, newTextDelay);
         }
+    }
 
-        menuToggle.addEventListener('click', toggleMenu);
-        if (menuOverlay) {
-            menuOverlay.addEventListener('click', toggleMenu);
+    function erase() {
+        if (charIndex > 0) {
+            typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
+            charIndex--;
+            setTimeout(erase, erasingDelay);
+        } else {
+            textArrayIndex++;
+            if(textArrayIndex >= textArray.length) textArrayIndex = 0;
+            setTimeout(type, typingDelay + 1100);
         }
-
-        document.querySelectorAll('[data-close-menu]').forEach(link => {
-            link.addEventListener('click', toggleMenu);
-        });
     }
 
-    const typedText = document.getElementById('typed-text');
-    if (typedText) {
-        const texts = ['Full Stack Developer', 'Android Developer', 'Freelancer'];
-        let textIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        let typingDelay = 100;
+    if(textArray.length) setTimeout(type, newTextDelay + 250);
+}
 
-        function type() {
-            const currentText = texts[textIndex];
-
-            if (isDeleting) {
-                typedText.textContent = currentText.substring(0, charIndex--);
-                if (charIndex < 0) {
-                    isDeleting = false;
-                    textIndex = (textIndex + 1) % texts.length;
-                    typingDelay = 100;
-                }
-            } else {
-                typedText.textContent = currentText.substring(0, charIndex++);
-                if (charIndex > currentText.length) {
-                    isDeleting = true;
-                    typingDelay = 1000;
-                }
-            }
-
-            setTimeout(type, isDeleting ? 50 : typingDelay);
-        }
-
-        setTimeout(type, 500);
-    }
-
-    const skillBars = document.querySelectorAll('.skill-progress');
-    function animateSkillBars() {
-        skillBars.forEach(bar => {
-            const width = bar.getAttribute('data-width');
-            bar.style.width = `${width}%`;
-            bar.style.opacity = '1';
-        });
-    }
-
-    const stats = document.querySelectorAll('.stat-number');
-    function animateStats() {
-        stats.forEach(stat => {
-            const target = parseInt(stat.getAttribute('data-target'));
-            let count = 0;
-            const increment = target / 50;
-
-            const updateCount = () => {
-                if (count < target) {
-                    count += increment;
-                    stat.textContent = Math.ceil(count);
-                    requestAnimationFrame(updateCount);
-                } else {
-                    stat.textContent = target;
-                }
-            };
-
-            updateCount();
-        });
-    }
-
-    const reveals = document.querySelectorAll('.reveal');
-    function revealSections() {
+// Scroll animasyonları
+function initScrollAnimations() {
+    const revealElements = document.querySelectorAll('.reveal');
+    
+    const revealOnScroll = function() {
         const windowHeight = window.innerHeight;
-
-        reveals.forEach(section => {
-            const elementTop = section.getBoundingClientRect().top;
-            const elementVisible = 150;
-
-            if (elementTop < windowHeight - elementVisible) {
-                section.classList.add('active');
+        const revealPoint = 150;
+        
+        revealElements.forEach(element => {
+            const revealTop = element.getBoundingClientRect().top;
+            
+            if (revealTop < windowHeight - revealPoint) {
+                element.classList.add('active');
             }
         });
-    }
+    };
+    
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll(); // İlk yüklemede kontrol et
+}
 
-    const particlesContainer = document.getElementById('particles');
-    if (particlesContainer) {
-        function createParticles() {
-            particlesContainer.innerHTML = '';
-
-            for (let i = 0; i < 75; i++) {
-                const particle = document.createElement('div');
-                particle.classList.add('particle');
-                particle.style.left = `${Math.random() * 100}vw`;
-                particle.style.top = `${Math.random() * 100}vh`;
-                particle.style.animationDelay = `${Math.random() * 5}s`;
-                particlesContainer.appendChild(particle);
-            }
-        }
-        createParticles();
-    }
-
-    const contactForm = document.getElementById('contact-form');
+// İletişim formu işlemleri
+function initContactForm() {
+    const contactForm = document.getElementById('contact');
+    
     if (contactForm) {
-        contactForm.addEventListener('submit', async function (e) {
+        contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
-
-            const submitButton = contactForm.querySelector('button[type="submit"]');
-            const formMessage = document.getElementById('form-message');
-            const formData = new FormData(contactForm);
-
-            const name = formData.get('name')?.toString().trim();
-            const email = formData.get('email')?.toString().trim();
-            const message = formData.get('message')?.toString().trim();
-
-            if (!name || !email || !message) {
-                showFormMessage('Lütfen tüm gerekli alanları doldurun.', 'error');
-                return;
-            }
-
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
-                showFormMessage('Lütfen geçerli bir e-posta adresi girin.', 'error');
-                return;
-            }
-
-            if (submitButton) {
-                submitButton.disabled = true;
-                const originalText = submitButton.innerHTML;
-                submitButton.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Gönderiliyor...';
-            }
-
+            
+            const submitButton = contactForm.querySelector('#form-submit');
+            if (!submitButton) return;
+            
+            const originalText = submitButton.textContent;
+            
+            // Yükleme durumu
+            submitButton.innerHTML = '<span class="loading"></span> Gönderiliyor...';
+            submitButton.disabled = true;
+            
             try {
+                const formData = new FormData(contactForm);
                 const response = await fetch(contactForm.action, {
                     method: 'POST',
                     body: formData,
@@ -171,203 +109,273 @@ document.addEventListener('DOMContentLoaded', function () {
                         'Accept': 'application/json'
                     }
                 });
-
+                
                 if (response.ok) {
-                    showFormMessage('Mesajınız başarıyla gönderildi. En kısa sürede sizinle iletişime geçeceğim.', 'success');
+                    showFormMessage('Mesajınız başarıyla gönderildi! En kısa sürede dönüş yapacağım.', 'success');
                     contactForm.reset();
-
-                    setTimeout(() => {
-                        window.location.href = 'https://mustafa-ciftci-portfoy.netlify.app/tesekkurler.html';
-                    }, 3000);
                 } else {
-                    throw new Error('Form gönderilemedi');
+                    throw new Error('Form gönderimi başarısız');
                 }
             } catch (error) {
-                console.error('Form gönderim hatası:', error);
-                showFormMessage('Mesaj gönderilirken bir hata oluştu. Lütfen daha sonra tekrar deneyin veya doğrudan e-posta gönderin.', 'error');
+                showFormMessage('Bir hata oluştu. Lütfen daha sonra tekrar deneyin veya direkt olarak iletişim bilgilerimden ulaşın.', 'error');
             } finally {
-                if (submitButton) {
-                    submitButton.disabled = false;
-                    submitButton.innerHTML = '<span class="mr-2">Gönder</span><i class="fas fa-paper-plane"></i>';
+                submitButton.textContent = originalText;
+                submitButton.disabled = false;
+            }
+        });
+    }
+}
+
+function showFormMessage(message, type) {
+    let messageDiv = document.getElementById('form-message');
+    
+    if (!messageDiv) {
+        messageDiv = document.createElement('div');
+        messageDiv.id = 'form-message';
+        const contactSection = document.querySelector('#contact');
+        if (contactSection) {
+            contactSection.appendChild(messageDiv);
+        }
+    }
+    
+    messageDiv.textContent = message;
+    messageDiv.className = `alert alert-${type}`;
+    messageDiv.style.display = 'block';
+    
+    setTimeout(() => {
+        messageDiv.style.display = 'none';
+    }, 5000);
+}
+
+// Isotope filtreleme
+function initIsotope() {
+    const isotopeGrid = document.querySelector('.isotope-box');
+    
+    if (isotopeGrid && typeof Isotope !== 'undefined') {
+        const iso = new Isotope(isotopeGrid, {
+            itemSelector: '.isotope-item',
+            layoutMode: 'fitRows',
+            percentPosition: true,
+            fitRows: {
+                gutter: 20
+            }
+        });
+        
+        // Filtre butonları
+        const filterButtons = document.querySelectorAll('.isotope-toolbar input[type="radio"]');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('change', function() {
+                const filterValue = this.getAttribute('data-type');
+                iso.arrange({ filter: filterValue === '*' ? '*' : `[data-type="${filterValue}"]` });
+            });
+        });
+    }
+}
+
+// Smooth scroll
+function initSmoothScroll() {
+    const menuLinks = document.querySelectorAll('.main-menu a, .hero-buttons a[href^="#"]');
+    
+    menuLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            
+            if (targetId.startsWith('#')) {
+                e.preventDefault();
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Mobil menüyü kapat
+                    const mobileMenu = document.getElementById('menu');
+                    if (mobileMenu && mobileMenu.classList.contains('active')) {
+                        mobileMenu.classList.remove('active');
+                    }
                 }
             }
         });
+    });
+}
 
-        function showFormMessage(message, type) {
-            const formMessage = document.getElementById('form-message');
-            if (!formMessage) return;
-
-            formMessage.textContent = message;
-            formMessage.classList.remove('hidden', 'text-green-400', 'text-red-400');
-
-            if (type === 'success') {
-                formMessage.classList.add('text-green-400');
-            } else {
-                formMessage.classList.add('text-red-400');
-            }
-
-            setTimeout(() => {
-                formMessage.classList.add('hidden');
-            }, 5000);
+// Video modal kontrolleri
+function initVideoModal() {
+    const videoBtns = document.querySelectorAll('.video-btn');
+    const videoModal = document.getElementById('videoModal');
+    const modalVideo = document.getElementById('modalVideo');
+    const closeModal = document.querySelector('.close-modal');
+    
+    if (videoModal && modalVideo) {
+        videoBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const videoSrc = this.getAttribute('data-video');
+                if (videoSrc) {
+                    modalVideo.src = videoSrc;
+                    videoModal.style.display = 'block';
+                    modalVideo.play();
+                }
+            });
+        });
+        
+        if (closeModal) {
+            closeModal.addEventListener('click', function() {
+                videoModal.style.display = 'none';
+                modalVideo.pause();
+                modalVideo.currentTime = 0;
+            });
         }
+        
+        window.addEventListener('click', function(event) {
+            if (event.target === videoModal) {
+                videoModal.style.display = 'none';
+                modalVideo.pause();
+                modalVideo.currentTime = 0;
+            }
+        });
     }
+}
 
+// WhatsApp widget
+function initWhatsAppWidget() {
     const whatsappToggle = document.getElementById('whatsapp-toggle');
     const whatsappPopup = document.getElementById('whatsapp-popup');
     const closeWhatsapp = document.getElementById('close-whatsapp');
-
+    
     if (whatsappToggle && whatsappPopup) {
-        whatsappToggle.addEventListener('click', function (e) {
+        whatsappToggle.addEventListener('click', function(e) {
             e.stopPropagation();
-            whatsappPopup.classList.toggle('active');
+            whatsappPopup.classList.toggle('show');
         });
-
+        
         if (closeWhatsapp) {
-            closeWhatsapp.addEventListener('click', function () {
-                whatsappPopup.classList.remove('active');
+            closeWhatsapp.addEventListener('click', function(e) {
+                e.stopPropagation();
+                whatsappPopup.classList.remove('show');
             });
         }
+        
+        // Dışarı tıklayınca kapat
+        document.addEventListener('click', function(e) {
+            if (!whatsappToggle.contains(e.target) && !whatsappPopup.contains(e.target)) {
+                whatsappPopup.classList.remove('show');
+            }
+        });
+        
+        // Otomatik açılma (ilk ziyarette)
+        setTimeout(() => {
+            if (!localStorage.getItem('whatsappShown')) {
+                whatsappPopup.classList.add('show');
+                localStorage.setItem('whatsappShown', 'true');
+                
+                // 30 saniye sonra kapat
+                setTimeout(() => {
+                    whatsappPopup.classList.remove('show');
+                }, 30000);
+            }
+        }, 10000);
+    }
+}
 
-        document.addEventListener('click', function (event) {
-            if (!event.target.closest('#whatsapp-widget') && whatsappPopup.classList.contains('active')) {
-                whatsappPopup.classList.remove('active');
+// Bölüm takibi ve sidebar aktif menü güncelleme
+function initSectionTracker() {
+    const sections = document.querySelectorAll('.section');
+    const navLinks = document.querySelectorAll('.main-menu a');
+    
+    function updateActiveNav() {
+        let current = '';
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            
+            if (window.scrollY >= (sectionTop - 200)) {
+                current = section.getAttribute('data-section');
+            }
+        });
+        
+        navLinks.forEach(link => {
+            link.parentElement.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.parentElement.classList.add('active');
             }
         });
     }
-
-    window.addEventListener('scroll', () => {
-        revealSections();
-
-        const skillsSection = document.querySelector('#skills');
-        if (skillsSection && skillsSection.getBoundingClientRect().top < window.innerHeight) {
-            animateSkillBars();
-        }
-
-        const homeSection = document.querySelector('#home');
-        if (homeSection && homeSection.getBoundingClientRect().top < window.innerHeight) {
-            animateStats();
-        }
-    });
-
-    revealSections();
-
-    window.addEventListener('resize', function () {
-        if (particlesContainer) {
-            createParticles();
-        }
-    });
     
-});
-
-function playVideoModal() {
-    const modal = document.createElement('div');
-    modal.style.cssText = `
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.9);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 10000;
-        cursor: pointer;
-    `;
-
-    const video = document.createElement('video');
-    video.src = './videos/Kayıt 2025-08-25 193525.mp4';
-    video.controls = true;
-    video.autoplay = true;
-    video.style.maxWidth = '90%';
-    video.style.maxHeight = '90%';
-    video.style.cursor = 'auto';
-
-    video.addEventListener('click', function (e) {
-        e.stopPropagation();
-    });
-
-    modal.appendChild(video);
-    document.body.appendChild(modal);
-
-    function closeModal() {
-        video.pause();
-        document.body.removeChild(modal);
-        document.removeEventListener('keydown', handleKeyPress);
-    }
-
-    function handleKeyPress(e) {
-        if (e.key === 'Escape') {
-            closeModal();
-        }
-    }
-
-    modal.addEventListener('click', closeModal);
-    document.addEventListener('keydown', handleKeyPress);
+    window.addEventListener('scroll', updateActiveNav);
+    updateActiveNav(); // İlk yüklemede aktif menüyü ayarla
 }
 
- function openVideoModal(videoSrc) {
-      const modal = document.getElementById('videoModal');
-      const video = document.getElementById('modalVideo');
-      
-      video.src = videoSrc;
-      modal.classList.add('active');
-      video.play();
-      
-      // ESC tuşu ile kapatma
-      document.addEventListener('keydown', handleEscKey);
+// Sayfa yükleme animasyonu
+window.addEventListener('load', function() {
+    document.body.classList.add('loaded');
+    
+    // Preloader varsa kaldır
+    const preloader = document.querySelector('.preloader');
+    if (preloader) {
+        setTimeout(() => {
+            preloader.style.opacity = '0';
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 500);
+        }, 500);
     }
+});
 
-    function closeVideoModal() {
-      const modal = document.getElementById('videoModal');
-      const video = document.getElementById('modalVideo');
-      
-      modal.classList.remove('active');
-      video.pause();
-      video.currentTime = 0;
-      
-      document.removeEventListener('keydown', handleEscKey);
-    }
-
-    function handleEscKey(event) {
-      if (event.key === 'Escape') {
-        closeVideoModal();
-      }
-    }
-
-    // Modal dışına tıklayarak kapatma
-    document.getElementById('videoModal').addEventListener('click', function(event) {
-      if (event.target === this) {
-        closeVideoModal();
-      }
-    });
-
-    // Video hover efektleri
-    document.addEventListener('DOMContentLoaded', function() {
-      const videos = document.querySelectorAll('.video-container video');
-      
-      videos.forEach(video => {
-        video.addEventListener('mouseenter', function() {
-          this.play().catch(e => console.log('Video oynatma hatası:', e));
-        });
+// Intersection Observer ile animasyonlar
+if ('IntersectionObserver' in window) {
+    const skillBars = document.querySelectorAll('.skill-progress');
+    
+    if (skillBars.length > 0) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const width = entry.target.style.width || entry.target.getAttribute('data-width') || '100%';
+                    entry.target.style.width = width;
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
         
-        video.addEventListener('mouseleave', function() {
-          this.pause();
-          this.currentTime = 0;
+        skillBars.forEach(bar => {
+            observer.observe(bar);
         });
-      });
+    }
+}
 
-      // Proje kartlarına hover efekti
-      const projectCards = document.querySelectorAll('.project-card');
-      projectCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-          this.style.transform = 'translateY(-8px)';
-        });
+// Klavye kısayolları
+document.addEventListener('keydown', function(e) {
+    // Escape ile modal kapatma
+    if (e.key === 'Escape') {
+        const videoModal = document.getElementById('videoModal');
+        if (videoModal && videoModal.style.display === 'block') {
+            videoModal.style.display = 'none';
+            const modalVideo = document.getElementById('modalVideo');
+            if (modalVideo) {
+                modalVideo.pause();
+                modalVideo.currentTime = 0;
+            }
+        }
         
-        card.addEventListener('mouseleave', function() {
-          this.style.transform = 'translateY(0)';
-        });
-      });
-    });
+        const whatsappPopup = document.getElementById('whatsapp-popup');
+        if (whatsappPopup && whatsappPopup.classList.contains('show')) {
+            whatsappPopup.classList.remove('show');
+        }
+    }
+});
 
-   
+// Viewport boyut değişikliklerini takip et
+let resizeTimer;
+window.addEventListener('resize', function() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function() {
+        // Isotope yeniden düzenleme
+        const isotopeGrid = document.querySelector('.isotope-box');
+        if (isotopeGrid && typeof Isotope !== 'undefined') {
+            isotopeGrid.isotope('layout');
+        }
+    }, 250);
+});
