@@ -1,66 +1,46 @@
-// Sidebar Menu
-$(document).ready(function() {
-    $('#menu-toggle').click(function(e) {
-        e.preventDefault();
-        $('#menu').toggleClass('active');
-    });
-    
-    $('#menu-close').click(function(e) {
-        e.preventDefault();
-        $('#menu').toggleClass('active');
-    });
-    
-    // Add active class to current menu item
-    $('.main-menu li:first').addClass('active');
-    
-    var showSection = function showSection(section, isAnimate) {
-        var direction = section.replace(/#/, ''),
-            reqSection = $('.section').filter(
-                '[data-section="' + direction + '"]'
-            ),
-            reqSectionPos = reqSection.offset().top - 0;
+// Masaüstü + mobil için hamburger menü toggle (her ekranda çalışsın)
+document.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.getElementById('menu-toggle');
+    const close  = document.getElementById('menu-close');
+    const menu   = document.getElementById('menu');
+    const wrapper = document.getElementById('page-wraper');
 
-        if (isAnimate) {
-            $('body, html').animate(
-                {
-                    scrollTop: reqSectionPos
-                },
-                800
-            );
-        } else {
-            $('body, html').scrollTop(reqSectionPos);
-        }
-    };
-
-    var checkSection = function checkSection() {
-        $('.section').each(function() {
-            var $this = $(this),
-                topEdge = $this.offset().top - 80,
-                bottomEdge = topEdge + $this.height(),
-                wScroll = $(window).scrollTop();
-            if (topEdge < wScroll && bottomEdge > wScroll) {
-                var currentId = $this.data('section'),
-                    reqLink = $('a').filter('[href*=\\#' + currentId + ']');
-                reqLink
-                    .closest('li')
-                    .addClass('active')
-                    .siblings()
-                    .removeClass('active');
-            }
-        });
-    };
-
-    $('.main-menu').on('click', 'a', function(e) {
-        e.preventDefault();
-        showSection($(this).attr('href'), true);
-    });
-
-    $(window).scroll(function() {
-        checkSection();
-    });
-    
-    // Lightbox
-    if($('[data-lightbox]').length) {
-        $('[data-lightbox]').lightbox();
+    if (!toggle || !menu || !wrapper) {
+        console.error("Menü elementleri eksik!");
+        return;
     }
+
+    // Tıklama ile aç/kapat
+    toggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        menu.classList.toggle('active');
+        wrapper.classList.toggle('menu-open');
+    });
+
+    // Kapatma ikonu
+    close.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        menu.classList.remove('active');
+        wrapper.classList.remove('menu-open');
+    });
+
+    // Dışarı tıklayınca kapat
+    document.addEventListener('click', (e) => {
+        if (menu.classList.contains('active') &&
+            !menu.contains(e.target) &&
+            !toggle.contains(e.target)) {
+            menu.classList.remove('active');
+            wrapper.classList.remove('menu-open');
+        }
+    });
+
+    // Linklere tıklayınca kapat (mobil için zaten vardı, geniş ekran için de tutarlı olsun)
+    document.querySelectorAll('.main-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            menu.classList.remove('active');
+            wrapper.classList.remove('menu-open');
+        });
+    });
 });

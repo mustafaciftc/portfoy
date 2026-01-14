@@ -1,31 +1,338 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="Mustafa Çiftci - Full Stack Developer Portföyü" />
-    <meta name="author" content="Mustafa Çiftci" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Mustafa Çiftci - Full Stack Developer Portföyü">
+    <meta name="author" content="Mustafa Çiftci">
     <title>Mustafa Çiftci - Full Stack Developer</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/templatemo-style.css">
+    <link rel="stylesheet" href="assets/css/lightbox.css">
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="assets/css/fontawesome.css" />
-    <link rel="stylesheet" href="assets/css/templatemo-style.css" />
-    <link rel="stylesheet" href="assets/css/owl.css" />
-    <link rel="stylesheet" href="assets/css/lightbox.css" />
-    <link rel="stylesheet" href="css/style.css" />
+    <style>
+        :root {
+            --primary: #f5a425;
+            --primary-hover: #ffc107;
+            --dark-bg: #1a1a1a;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --text-light: #ccc;
+            --border-light: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            background: var(--dark-bg);
+            color: #fff;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .line-dec {
+            background: var(--primary);
+        }
+
+
+        /* ISOTOPE 2 SÜTUN DÜZELTME */
+        .isotope-box {
+            position: relative;
+        }
+
+        .isotope-item {
+            width: 48%;
+            margin: 1%;
+            float: left;
+        }
+
+        /* Mobilde tek sütun */
+        @media (max-width: 767px) {
+            .isotope-item {
+                width: 100%;
+                float: none;
+            }
+        }
+
+        .snip1321 {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .snip1321 img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            transition: transform 0.45s ease;
+        }
+
+        .snip1321:hover img {
+            transform: scale(1.07);
+        }
+
+        .snip1321 figcaption {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.88), transparent 60%);
+            padding: 25px 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .snip1321:hover figcaption {
+            opacity: 1;
+        }
+
+
+
+
+        /* Filtre butonları */
+        .isotope-toolbar {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .isotope-toolbar label {
+            margin: 0 6px 12px;
+            cursor: pointer;
+        }
+
+        .isotope-toolbar input[type="radio"] {
+            display: none;
+        }
+
+        .isotope-toolbar span {
+            padding: 10px 24px;
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 50px;
+            color: var(--text-light);
+            transition: all 0.25s ease;
+        }
+
+        .isotope-toolbar input:checked+span {
+            background: var(--primary);
+            color: #000;
+            font-weight: 600;
+        }
+
+
+
+        @media (max-width: 767px) {
+            .isotope-item {
+                width: 100%;
+                padding: 0 10px;
+            }
+
+            .snip1321 img {
+                height: 220px;
+            }
+        }
+
+        /* Pricing Cards */
+        .pricing-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-light);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+            border-color: var(--primary);
+        }
+
+        .pricing-card.featured {
+            background: rgba(245, 164, 37, 0.08);
+            border: 2px solid var(--primary);
+        }
+
+        .pricing-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 20px 0;
+        }
+
+        .pricing-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 30px;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border-light);
+            color: var(--text-light);
+        }
+
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-features li i {
+            color: var(--primary);
+            margin-right: 10px;
+        }
+
+        .btn-pricing {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background: var(--primary);
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-pricing:hover {
+            background: var(--primary-hover);
+        }
+
+        /* WhatsApp Widget */
+        #whatsapp-widget {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+
+        #whatsapp-toggle {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #25D366, #128C7E);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        #whatsapp-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        /* Mobil Menü */
+        @media (max-width: 991px) {
+            #menu {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 280px;
+                height: 100vh;
+                backdrop-filter: blur(10px);
+                box-shadow: 4px 0 20px rgba(0, 0, 0, 0.5);
+                z-index: 1001;
+                transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                transform: translateX(-100%);
+                overflow-y: auto;
+            }
+
+            #menu.active {
+                transform: translateX(0);
+            }
+
+            body.menu-open {
+                overflow: hidden;
+            }
+
+            body.menu-open #page-wraper {
+                transform: translateX(280px);
+                transition: transform 0.3s ease;
+            }
+
+            #menu-toggle {
+                position: fixed;
+                top: 20px;
+                left: 20px;
+                width: 50px;
+                height: 50px;
+                background: var(--primary);
+                color: white;
+                border-radius: 50%;
+                display: flex !important;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                z-index: 1002;
+                font-size: 1.2rem;
+                box-shadow: 0 4px 15px rgba(245, 164, 37, 0.3);
+                border: none;
+            }
+
+            #menu-toggle:hover {
+                background: var(--primary-hover);
+                transform: scale(1.1);
+            }
+
+            #menu-close {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                color: white;
+                font-size: 1.5rem;
+                cursor: pointer;
+                background: rgba(255, 255, 255, 0.1);
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                display: flex !important;
+                align-items: center;
+                justify-content: center;
+            }
+
+            #menu-close:hover {
+                background: rgba(255, 255, 255, 0.2);
+            }
+        }
+
+        @media (min-width: 992px) {
+
+            #menu-toggle,
+            #menu-close {
+                display: none !important;
+            }
+
+            .responsive-nav {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 280px;
+                height: 100vh;
+                z-index: 1000;
+            }
+
+            #menu {
+                transform: translateX(0) !important;
+            }
+        }
+    </style>
 </head>
 
 <body>
+
     <div id="page-wraper">
+
         <!-- Sidebar Menu -->
         <div class="responsive-nav">
             <i class="fa fa-bars" id="menu-toggle"></i>
@@ -33,7 +340,7 @@
                 <i class="fa fa-times" id="menu-close"></i>
                 <div class="container">
                     <div class="image">
-                        <a href="#"><img src="/images/pp2.jpg" alt="Mustafa Çiftci" /></a>
+                        <a href="#"><img src="/images/pp2.jpg" alt="Mustafa Çiftci"></a>
                     </div>
                     <div class="author-content">
                         <h4>Mustafa Çiftci</h4>
@@ -50,18 +357,13 @@
                     </nav>
                     <div class="social-network">
                         <ul class="soial-icons">
-                            <li>
-                                <a href="https://linkedin.com/in/mustafa-%C3%A7iftci-966b90262/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                            <li><a href="https://linkedin.com/in/mustafa-%C3%A7iftci-966b90262/" target="_blank"><i
+                                        class="fab fa-linkedin"></i></a></li>
+                            <li><a href="https://github.com/mustafaciftc" target="_blank"><i
+                                        class="fab fa-github"></i></a></li>
+                            <li><a href="https://wa.me/905319583445" target="_blank"><i class="fab fa-whatsapp"></i></a>
                             </li>
-                            <li>
-                                <a href="https://github.com/mustafaciftc" target="_blank"><i class="fab fa-github"></i></a>
-                            </li>
-                            <li>
-                                <a href="https://wa.me/905319583445" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                            </li>
-                            <li>
-                                <a href="mailto:mciftci19891903@gmail.com"><i class="fa fa-envelope"></i></a>
-                            </li>
+                            <li><a href="mailto:mciftci19891903@gmail.com"><i class="fa fa-envelope"></i></a></li>
                         </ul>
                     </div>
                     <div class="copyright-text">
@@ -71,29 +373,37 @@
             </div>
         </div>
 
-        <!-- About Section -->
+        <!-- Hakkımda -->
         <section class="section about-me" data-section="section1">
             <div class="container">
                 <div class="section-heading">
                     <h2>Hakkımda</h2>
                     <div class="line-dec"></div>
-                    <span>3+ yıl deneyimli Full Stack Developer olarak Laravel, Node.js, React ile e-ticaret ve web uygulamaları geliştiriyorum.</span>
+                    <span>3+ yıl deneyimli Full Stack Developer olarak Laravel, Node.js, React ile e-ticaret ve web
+                        uygulamaları geliştiriyorum.</span>
                 </div>
-                
-                <div class="about-content">
+
+                <div class="left-image-post">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="left-image">
-                                <img src="assets/images/pro.png" alt="Çalışma Ortamı" />
+                                <img src="assets/images/pro.png" alt="Çalışma Ortamı">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="right-text">
                                 <h4>Profesyonel Yolculuğum</h4>
                                 <p>
-                                    Yazılım geliştirme sektöründe 3 yılı aşkın süredir edindiğim profesyonel deneyimle, Full Stack Developer olarak
-                                    hem frontend hem de backend teknolojilerinde uzmanlık geliştirdim. E-ticaret çözümleri, kurumsal web uygulamaları
-                                    ve cross-platform mobil uygulama geliştirme alanlarında özelleşmiş bulunmaktayım.
+                                    Yazılım geliştirme sektöründe 3 yılı aşkın süredir edindiğim profesyonel deneyimle,
+                                    Full Stack Developer olarak hem frontend hem de backend tarafında güçlü çözümler
+                                    üretiyorum. Laravel, Node.js ve React başta olmak üzere modern teknolojilerle
+                                    ölçeklenebilir, güvenli ve performans odaklı web uygulamaları geliştiriyorum.
+                                </p>
+                                <p>
+                                    Bugüne kadar e-ticaret sistemleri, kurumsal web siteleri, yönetim panelleri ve
+                                    özel yazılım projelerinde aktif rol aldım. Projelerde sadece kod yazmakla kalmayıp,
+                                    kullanıcı deneyimi, performans optimizasyonu ve sürdürülebilir mimari konularında
+                                    da katkı sağlıyorum.
                                 </p>
                                 <div class="white-button">
                                     <a href="#section5">İletişime Geç</a>
@@ -101,8 +411,10 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="row mt-5">
+                </div>
+
+                <div class="right-image-post">
+                    <div class="row">
                         <div class="col-md-6">
                             <div class="left-text">
                                 <h4>Neden Beni Seçmelisiniz?</h4>
@@ -133,7 +445,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="right-image">
-                                <img src="assets/images/neden.png" alt="Teknoloji Stack" />
+                                <img src="assets/images/neden.png" alt="Teknoloji Stack">
                             </div>
                         </div>
                     </div>
@@ -141,7 +453,7 @@
             </div>
         </section>
 
-        <!-- Skills Section -->
+        <!-- Yeteneklerim -->
         <section class="section my-services" data-section="section2">
             <div class="container">
                 <div class="section-heading">
@@ -149,16 +461,15 @@
                     <div class="line-dec"></div>
                     <span>Modern web teknolojileri ve araçları konusundaki uzmanlığım</span>
                 </div>
+
                 <div class="row">
                     <div class="col-md-6">
                         <div class="service-item">
                             <div class="first-service-icon service-icon"></div>
                             <h4>Backend Geliştirme</h4>
-                            <p>
-                                Laravel & PHP (%90), Node.js & Express (%85), MySQL & MongoDB (%85) ile güçlü ve ölçeklenebilir backend sistemleri.
-                            </p>
+                            <p>Laravel & PHP (%90), Node.js & Express (%85), MySQL & MongoDB (%85)</p>
                             <div class="skill-bar">
-                                <div class="skill-progress" style="width: 90%"></div>
+                                <div class="skill-progress" style="width:90%"></div>
                             </div>
                         </div>
                     </div>
@@ -166,11 +477,9 @@
                         <div class="service-item">
                             <div class="second-service-icon service-icon"></div>
                             <h4>Frontend Geliştirme</h4>
-                            <p>
-                                React & React Native (%80), HTML5, CSS3, JavaScript ES6+ ile modern ve responsive kullanıcı arayüzleri.
-                            </p>
+                            <p>React & React Native (%80), HTML5, CSS3, JavaScript ES6+</p>
                             <div class="skill-bar">
-                                <div class="skill-progress" style="width: 80%"></div>
+                                <div class="skill-progress" style="width:80%"></div>
                             </div>
                         </div>
                     </div>
@@ -178,11 +487,9 @@
                         <div class="service-item">
                             <div class="third-service-icon service-icon"></div>
                             <h4>E-Ticaret Çözümleri</h4>
-                            <p>
-                                İyzico/PayTR entegrasyonlu, admin panelli, stok yönetimli kapsamlı e-ticaret sistemleri.
-                            </p>
+                            <p>İyzico/PayTR entegrasyonlu, admin panelli, stok yönetimli sistemler</p>
                             <div class="skill-bar">
-                                <div class="skill-progress" style="width: 85%"></div>
+                                <div class="skill-progress" style="width:85%"></div>
                             </div>
                         </div>
                     </div>
@@ -190,227 +497,167 @@
                         <div class="service-item">
                             <div class="fourth-service-icon service-icon"></div>
                             <h4>Mobil Uygulama</h4>
-                            <p>
-                                React Native ile cross-platform mobil uygulama geliştirme, API entegrasyonu ve store yayınlama.
-                            </p>
+                            <p>React Native ile cross-platform mobil uygulama geliştirme</p>
                             <div class="skill-bar">
-                                <div class="skill-progress" style="width: 75%"></div>
+                                <div class="skill-progress" style="width:75%"></div>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="tech-stack mt-5">
                     <h4 class="text-center mb-4">Teknoloji Stack'im</h4>
                     <div class="row text-center">
                         <div class="col-md-2 col-4">
-                            <div class="tech-item">
-                                <i class="fab fa-laravel fa-3x text-danger"></i>
+                            <div class="tech-item"><i class="fab fa-laravel fa-3x text-danger"></i>
                                 <p>Laravel</p>
                             </div>
                         </div>
                         <div class="col-md-2 col-4">
-                            <div class="tech-item">
-                                <i class="fab fa-node-js fa-3x text-success"></i>
+                            <div class="tech-item"><i class="fab fa-node-js fa-3x text-success"></i>
                                 <p>Node.js</p>
                             </div>
                         </div>
                         <div class="col-md-2 col-4">
-                            <div class="tech-item">
-                                <i class="fab fa-react fa-3x text-info"></i>
+                            <div class="tech-item"><i class="fab fa-react fa-3x text-info"></i>
                                 <p>React</p>
                             </div>
                         </div>
                         <div class="col-md-2 col-4">
-                            <div class="tech-item">
-                                <i class="fas fa-database fa-3x text-primary"></i>
+                            <div class="tech-item"><i class="fas fa-database fa-3x text-primary"></i>
                                 <p>MySQL</p>
                             </div>
                         </div>
                         <div class="col-md-2 col-4">
-                            <div class="tech-item">
-                                <i class="fab fa-git-alt fa-3x text-warning"></i>
+                            <div class="tech-item"><i class="fab fa-git-alt fa-3x text-warning"></i>
                                 <p>Git</p>
                             </div>
                         </div>
                         <div class="col-md-2 col-4">
-                            <div class="tech-item">
-                                <i class="fab fa-bootstrap fa-3x text-purple"></i>
+                            <div class="tech-item"><i class="fab fa-bootstrap fa-3x" style="color:#7952b3;"></i>
                                 <p>Bootstrap</p>
                             </div>
                         </div>
-                        
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Projects Section -->
-        <section class="section my-work" data-section="section3">
+        <!-- Projelerim -->
+        <section class="section my-work" data-section="section3" id="projeler">
             <div class="container">
                 <div class="section-heading">
                     <h2>Projelerim</h2>
                     <div class="line-dec"></div>
-                    <span>Modern teknolojilerle geliştirdiğim, performans odaklı web ve mobil uygulamalar</span>
+                    <span>Modern teknolojilerle geliştirdiğim seçkin çalışmalar</span>
                 </div>
-                
-                <div class="row">
-                    <div class="isotope-wrapper">
-                        <form class="isotope-toolbar">
-                            <label>
-                                <input type="radio" data-type="*" checked="" name="isotope-filter" />
-                                <span>Tümü</span>
-                            </label>
-                            <label>
-                                <input type="radio" data-type="ecommerce" name="isotope-filter" />
-                                <span>E-Ticaret</span>
-                            </label>
-                            <label>
-                                <input type="radio" data-type="web" name="isotope-filter" />
-                                <span>Web Uygulama</span>
-                            </label>
-                            <label>
-                                <input type="radio" data-type="mobile" name="isotope-filter" />
-                                <span>Mobil</span>
-                            </label>
-                        </form>
-                        
-                        <div class="isotope-box">
-                            <!-- Project 1 -->
-                            <div class="isotope-item" data-type="ecommerce">
-                                <figure class="snip1321">
-                                    <img src="/images/market.png" alt="Market POS Sistemi" />
-                                    <figcaption>
-                                        <a href="/images/market.png" data-lightbox="image-1" data-title="Market POS Sistemi">
-                                            <i class="fa fa-search"></i>
-                                        </a>
-                                        <h4>Market POS & Veresiye Sistemi</h4>
-                                        <span>Laravel, MySQL, Bootstrap</span>
-                                        <p>Stok yönetimi, satış raporlama ve veresiye takip özellikleri</p>
-                                        <a href="https://everesiyedefteri.com.tr/" target="_blank" class="demo-link">
-                                            <i class="fas fa-external-link-alt mr-1"></i>Canlı Demo
-                                        </a>
-                                    </figcaption>
-                                </figure>
-                            </div>
 
-                            <!-- Project 2 -->
-                            <div class="isotope-item" data-type="ecommerce">
-                                <figure class="snip1321">
-                                    <img src="/images/stok.png" alt="E-Ticaret Platformu" />
-                                    <figcaption>
-                                        <a href="/images/stok.png" data-lightbox="image-1" data-title="E-Ticaret Platformu">
-                                            <i class="fa fa-search"></i>
-                                        </a>
-                                        <h4>E-Ticaret & Stok Takip</h4>
-                                        <span>Laravel, İyzico, Bootstrap</span>
-                                        <p>Kapsamlı e-ticaret çözümü ve admin paneli</p>
-                                        <a href="https://proje.doguweb.com.tr/" target="_blank" class="demo-link">
-                                            <i class="fas fa-external-link-alt mr-1"></i>Canlı Demo
-                                        </a>
-                                    </figcaption>
-                                </figure>
-                            </div>
+                <div class="isotope-wrapper">
+                    <form class="isotope-toolbar">
+                        <label><input type="radio" data-type="*" checked name="isotope-filter"><span>Tümü</span></label>
+                        <label><input type="radio" data-type="ecommerce"
+                                name="isotope-filter"><span>E-Ticaret</span></label>
+                        <label><input type="radio" data-type="web" name="isotope-filter"><span>Web</span></label>
+                        <label><input type="radio" data-type="mobile" name="isotope-filter"><span>Mobil</span></label>
+                    </form>
 
-                            <!-- Project 3 -->
-                            <div class="isotope-item" data-type="web">
-                                <figure class="snip1321">
-                                    <img src="/images/forma.png" alt="Forma Satış Platformu" />
-                                    <figcaption>
-                                        <a href="/images/forma.png" data-lightbox="image-1" data-title="Forma Satış Platformu">
-                                            <i class="fa fa-search"></i>
-                                        </a>
-                                        <h4>Forma Satış Platformu</h4>
-                                        <span>Laravel, Google OAuth, Multi-Language</span>
-                                        <p>2 dilde hizmet veren forma satış platformu</p>
-                                        <a href="https://satisformasi.doguweb.com.tr/" target="_blank" class="demo-link">
-                                            <i class="fas fa-external-link-alt mr-1"></i>Canlı Demo
-                                        </a>
-                                    </figcaption>
-                                </figure>
-                            </div>
+                    <div class="isotope-box">
+                        <div class="isotope-item" data-type="ecommerce">
+                            <figure class="snip1321">
+                                <img src="/images/market.png" alt="Market POS Sistemi">
+                                <figcaption>
+                                    <a href="/images/market.png" data-lightbox="gallery"
+                                        data-title="Market POS & Veresiye Sistemi"><i class="fa fa-search"></i></a>
+                                    <h4>Market POS Sistemi</h4>
+                                    <span>Veresiye ve stok yönetimi</span>
+                                </figcaption>
+                            </figure>
+                        </div>
 
-                            <!-- Project 4 -->
-                            <div class="isotope-item" data-type="web">
-                                <figure class="snip1321">
-                                    <img src="/images/fikirmax.png" alt="Dijital Pazarlama Sitesi" />
-                                    <figcaption>
-                                        <a href="/images/fikirmax.png" data-lightbox="image-1" data-title="Dijital Pazarlama Sitesi">
-                                            <i class="fa fa-search"></i>
-                                        </a>
-                                        <h4>Dijital Pazarlama Ajansı</h4>
-                                        <span>HTML5, JavaScript, Tailwind CSS</span>
-                                        <p>Modern tasarım ile dijital pazarlama sitesi</p>
-                                        <a href="https://fikirmax.com" target="_blank" class="demo-link">
-                                            <i class="fas fa-external-link-alt mr-1"></i>Canlı Demo
-                                        </a>
-                                    </figcaption>
-                                </figure>
-                            </div>
+                        <div class="isotope-item" data-type="ecommerce">
+                            <figure class="snip1321">
+                                <img src="/images/stok.png" alt="E-Ticaret Platformu">
+                                <figcaption>
+                                    <a href="/images/stok.png" data-lightbox="gallery"
+                                        data-title="E-Ticaret & Stok Takip"><i class="fa fa-search"></i></a>
+                                    <h4>E-Ticaret Platformu</h4>
+                                    <span>Ödeme ve stok entegrasyonu</span>
+                                </figcaption>
+                            </figure>
+                        </div>
 
-                            <!-- Project 5 -->
-                            <div class="isotope-item" data-type="mobile">
-                                <figure class="snip1321">
-                                    <img src="/images/not.png" alt="Android Not Defteri" />
-                                    <figcaption>
-                                        <a href="/images/not.png" data-lightbox="image-1" data-title="Android Not Defteri">
-                                            <i class="fa fa-search"></i>
-                                        </a>
-                                        <h4>Android Not Defteri</h4>
-                                        <span>React Native, Node.js, Redux</span>
-                                        <p>React Native ile mobil not defteri uygulaması</p>
-                                        <button class="demo-link video-btn" data-video="videos/not-defteri.mp4">
-                                            <i class="fas fa-play-circle mr-1"></i>Video Demo
-                                        </button>
-                                    </figcaption>
-                                </figure>
-                            </div>
+                        <div class="isotope-item" data-type="web">
+                            <figure class="snip1321">
+                                <img src="/images/forma.png" alt="Forma Satış Platformu">
+                                <figcaption>
+                                    <a href="/images/forma.png" data-lightbox="gallery"
+                                        data-title="Forma Satış Platformu"><i class="fa fa-search"></i></a>
+                                    <h4>Forma Satış Platformu</h4>
+                                    <span>Çok dilli satış sistemi</span>
+                                </figcaption>
+                            </figure>
+                        </div>
 
-                            <!-- Project 6 -->
-                            <div class="isotope-item" data-type="mobile">
-                                <figure class="snip1321">
-                                    <img src="/images/sozluk.png" alt="Android Sözlük" />
-                                    <figcaption>
-                                        <a href="/images/sozluk.png" data-lightbox="image-1" data-title="Android Sözlük">
-                                            <i class="fa fa-search"></i>
-                                        </a>
-                                        <h4>Android Sözlük Uygulaması</h4>
-                                        <span>React Native, SQLite, Çift Dil</span>
-                                        <p>Türkçe-İngilizce çevrimdışı sözlük uygulaması</p>
-                                        <button class="demo-link video-btn" data-video="videos/sozluk.mp4">
-                                            <i class="fas fa-play-circle mr-1"></i>Video Demo
-                                        </button>
-                                    </figcaption>
-                                </figure>
-                            </div>
+                        <div class="isotope-item" data-type="web">
+                            <figure class="snip1321">
+                                <img src="/images/fikirmax.png" alt="Dijital Pazarlama Sitesi">
+                                <figcaption>
+                                    <a href="/images/fikirmax.png" data-lightbox="gallery"
+                                        data-title="Dijital Pazarlama Ajansı"><i class="fa fa-search"></i></a>
+                                    <h4>Dijital Pazarlama Sitesi</h4>
+                                    <span>Modern tanıtım sitesi</span>
+                                </figcaption>
+                            </figure>
+                        </div>
+
+                        <div class="isotope-item" data-type="mobile">
+                            <figure class="snip1321">
+                                <img src="/images/not.png" alt="Android Not Defteri">
+                                <figcaption>
+                                    <a href="/images/not.png" data-lightbox="gallery"
+                                        data-title="Android Not Defteri"><i class="fa fa-search"></i></a>
+                                    <h4>Android Not Defteri</h4>
+                                    <span>Mobil not alma uygulaması</span>
+                                </figcaption>
+                            </figure>
+                        </div>
+
+                        <div class="isotope-item" data-type="mobile">
+                            <figure class="snip1321">
+                                <img src="/images/sozluk.png" alt="Android Sözlük">
+                                <figcaption>
+                                    <a href="/images/sozluk.png" data-lightbox="gallery" data-title="Android Sözlük"><i
+                                            class="fa fa-search"></i></a>
+                                    <h4>Android Sözlük Uygulaması</h4>
+                                    <span>Çevrimdışı çift dilli sözlük</span>
+                                </figcaption>
+                            </figure>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="text-center mt-5">
-                    <a href="https://github.com/mustafaciftc" target="_blank" class="btn btn-primary">
-                        <i class="fab fa-github mr-2"></i>Tüm Projelerim
+                    <a href="https://github.com/mustafaciftc" target="_blank" class="btn btn-outline-light">
+                        <i class="fab fa-github me-2"></i> GitHub'da Tüm Projeler
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- Pricing Section -->
+        <!-- Fiyatlandırma -->
         <section class="section pricing-section" data-section="section4">
             <div class="container">
                 <div class="section-heading">
                     <h2>Şeffaf ve Uygun Fiyatlandırma</h2>
                     <div class="line-dec"></div>
-                    <span>Projenizin kapsamına göre esnek paketler. Sürpriz masraf yok, net ve anlaşılır fiyatlar.</span>
+                    <span>Projenizin kapsamına göre esnek paketler. Sürpriz masraf yok.</span>
                 </div>
-                
+
                 <div class="row">
                     <div class="col-md-3">
                         <div class="pricing-card">
                             <div class="pricing-header">
-                                <div class="pricing-icon">
-                                    <i class="fas fa-rocket"></i>
-                                </div>
+                                <div class="pricing-icon"><i class="fas fa-rocket"></i></div>
                                 <h3>Landing / Tanıtım</h3>
                                 <div class="price">₺5.000+</div>
                             </div>
@@ -422,18 +669,14 @@
                                 <li><i class="fas fa-check"></i>Ücretsiz SSL kurulumu</li>
                                 <li><i class="fas fa-check"></i>10 gün revizyon hakkı</li>
                             </ul>
-                            <a href="https://wa.me/905319583445" target="_blank" class="btn btn-pricing">
-                                Teklif Al
-                            </a>
+                            <a href="https://wa.me/905319583445" target="_blank" class="btn btn-pricing">Teklif Al</a>
                         </div>
                     </div>
-                    
+
                     <div class="col-md-3">
                         <div class="pricing-card featured">
                             <div class="pricing-header">
-                                <div class="pricing-icon">
-                                    <i class="fas fa-globe"></i>
-                                </div>
+                                <div class="pricing-icon"><i class="fas fa-globe"></i></div>
                                 <h3>Kurumsal Web</h3>
                                 <div class="price">₺10.000+</div>
                             </div>
@@ -445,18 +688,14 @@
                                 <li><i class="fas fa-check"></i>Google Analytics kurulumu</li>
                                 <li><i class="fas fa-check"></i>14 gün revizyon hakkı</li>
                             </ul>
-                            <a href="https://wa.me/905319583445" target="_blank" class="btn btn-pricing">
-                                Teklif Al
-                            </a>
+                            <a href="https://wa.me/905319583445" target="_blank" class="btn btn-pricing">Teklif Al</a>
                         </div>
                     </div>
-                    
+
                     <div class="col-md-3">
                         <div class="pricing-card">
                             <div class="pricing-header">
-                                <div class="pricing-icon">
-                                    <i class="fas fa-shopping-cart"></i>
-                                </div>
+                                <div class="pricing-icon"><i class="fas fa-shopping-cart"></i></div>
                                 <h3>E-Ticaret</h3>
                                 <div class="price">₺15.000+</div>
                             </div>
@@ -468,18 +707,14 @@
                                 <li><i class="fas fa-check"></i>Admin paneli ve raporlama</li>
                                 <li><i class="fas fa-check"></i>21 gün revizyon hakkı</li>
                             </ul>
-                            <a href="https://wa.me/905319583445" target="_blank" class="btn btn-pricing">
-                                Teklif Al
-                            </a>
+                            <a href="https://wa.me/905319583445" target="_blank" class="btn btn-pricing">Teklif Al</a>
                         </div>
                     </div>
-                    
+
                     <div class="col-md-3">
                         <div class="pricing-card">
                             <div class="pricing-header">
-                                <div class="pricing-icon">
-                                    <i class="fas fa-mobile-alt"></i>
-                                </div>
+                                <div class="pricing-icon"><i class="fas fa-mobile-alt"></i></div>
                                 <h3>Mobil Uygulama</h3>
                                 <div class="price">₺20.000+</div>
                             </div>
@@ -491,43 +726,14 @@
                                 <li><i class="fas fa-check"></i>Kullanıcı giriş/kayıt sistemi</li>
                                 <li><i class="fas fa-check"></i>3 ay bakım desteği</li>
                             </ul>
-                            <a href="https://wa.me/905319583445" target="_blank" class="btn btn-pricing">
-                                Teklif Al
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="pricing-guarantee text-center mt-5">
-                    <h4><i class="fas fa-shield-alt mr-2"></i>Kalite ve Güven Garantisi</h4>
-                    <div class="row mt-4">
-                        <div class="col-md-4">
-                            <div class="guarantee-item">
-                                <i class="fas fa-undo"></i>
-                                <h5>Revizyon Süresi</h5>
-                                <p>10-21 gün ücretsiz düzeltme</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="guarantee-item">
-                                <i class="fas fa-credit-card"></i>
-                                <h5>Esnek Ödeme</h5>
-                                <p>%50 başlangıç - %30 ara - %20 teslim</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="guarantee-item">
-                                <i class="fas fa-headset"></i>
-                                <h5>Teslim Sonrası Destek</h5>
-                                <p>30-90 gün teknik destek</p>
-                            </div>
+                            <a href="https://wa.me/905319583445" target="_blank" class="btn btn-pricing">Teklif Al</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
+        <!-- İletişim -->
         <section class="section contact-me" data-section="section5">
             <div class="container">
                 <div class="section-heading">
@@ -535,119 +741,151 @@
                     <div class="line-dec"></div>
                     <span>Yeni bir proje mi planlıyorsunuz? Ücretsiz ön görüşme için benimle iletişime geçin.</span>
                 </div>
-                
+
                 <div class="row">
-                    <div class="col-md-6">
-                        <div class="contact-info">
-                            <h3>İletişim Bilgilerim</h3>
-                            <div class="contact-item">
-                                <i class="fas fa-envelope"></i>
-                                <div>
-                                    <h5>E-posta</h5>
-                                    <a href="mailto:mciftci19891903@gmail.com">mciftci19891903@gmail.com</a>
-                                    <p class="small">Ortalama yanıt süresi: 4 saat</p>
+                    <div class="right-content">
+                        <div class="container">
+                            <form id="contact" action="https://formspree.io/f/mpwdealb" method="POST">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <fieldset>
+                                            <input name="name" type="text" class="form-control" id="name"
+                                                placeholder="Adınız Soyadınız" required>
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <fieldset>
+                                            <input name="email" type="email" class="form-control" id="email"
+                                                placeholder="E-posta Adresiniz" required>
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <fieldset>
+                                            <input name="subject" type="text" class="form-control" id="subject"
+                                                placeholder="Konu" required>
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <fieldset>
+                                            <textarea name="message" rows="6" class="form-control" id="message"
+                                                placeholder="Proje detaylarınızı buraya yazın..." required></textarea>
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <fieldset>
+                                            <button type="submit" id="form-submit" class="button">Mesaj Gönder</button>
+                                        </fieldset>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-phone"></i>
-                                <div>
-                                    <h5>Telefon & WhatsApp</h5>
-                                    <a href="tel:+905319583445">+90 531 958 34 45</a>
-                                    <p class="small">Hafta içi 09:00 - 18:00</p>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fab fa-linkedin"></i>
-                                <div>
-                                    <h5>LinkedIn</h5>
-                                    <a href="https://linkedin.com/in/mustafa-%C3%A7iftci-966b90262/" target="_blank">Profili İncele</a>
-                                </div>
-                            </div>
-                            
-                            <div class="social-links mt-4">
-                                <a href="https://linkedin.com/in/mustafa-%C3%A7iftci-966b90262/" target="_blank" class="social-link">
-                                    <i class="fab fa-linkedin"></i>
-                                </a>
-                                <a href="https://github.com/mustafaciftc" target="_blank" class="social-link">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                                <a href="https://wa.me/905319583445" target="_blank" class="social-link">
-                                    <i class="fab fa-whatsapp"></i>
-                                </a>
-                            </div>
+                            </form>
                         </div>
-                    </div>
-                    
-                    <div class="col-md-6">
-                        <form id="contact" action="https://formspree.io/f/mpwdealb" method="POST">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <fieldset>
-                                        <input name="name" type="text" class="form-control" id="name" placeholder="Adınız Soyadınız" required="" />
-                                    </fieldset>
-                                </div>
-                                <div class="col-md-6">
-                                    <fieldset>
-                                        <input name="email" type="email" class="form-control" id="email" placeholder="E-posta Adresiniz" required="" />
-                                    </fieldset>
-                                </div>
-                                <div class="col-md-12">
-                                    <fieldset>
-                                        <input name="subject" type="text" class="form-control" id="subject" placeholder="Konu" required="" />
-                                    </fieldset>
-                                </div>
-                                <div class="col-md-12">
-                                    <fieldset>
-                                        <textarea name="message" rows="6" class="form-control" id="message" placeholder="Proje detaylarınızı buraya yazın..." required=""></textarea>
-                                    </fieldset>
-                                </div>
-                                <div class="col-md-12">
-                                    <fieldset>
-                                        <button type="submit" id="form-submit" class="button">
-                                            Mesaj Gönder
-                                        </button>
-                                    </fieldset>
-                                </div>
-                            </div>
-                        </form>
                     </div>
                 </div>
             </div>
         </section>
-        
-        <!-- WhatsApp Widget -->
-        <div id="whatsapp-widget">
-            <div id="whatsapp-toggle">
-                <i class="fab fa-whatsapp"></i>
-            </div>
-            <div id="whatsapp-popup">
-                <h4>WhatsApp ile İletişim</h4>
-                <p>Hemen mesaj gönderin</p>
-                <a href="https://wa.me/905319583445" target="_blank" class="btn btn-whatsapp">
-                    <i class="fab fa-whatsapp mr-2"></i>Mesaj Gönder
-                </a>
-            </div>
-        </div>
+
     </div>
 
-    <!-- Video Modal -->
-    <div id="videoModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <video id="modalVideo" controls>
-                Tarayıcınız video etiketini desteklemiyor.
-            </video>
+    <!-- WhatsApp Widget -->
+    <div id="whatsapp-widget">
+        <div id="whatsapp-toggle">
+            <i class="fab fa-whatsapp"></i>
         </div>
     </div>
 
     <!-- Scripts -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/isotope.min.js"></script>
-    <script src="assets/js/owl-carousel.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
     <script src="assets/js/lightbox.js"></script>
-    <script src="assets/js/custom.js"></script>
-    <script src="js/script.js"></script>
-    
+
+    <script>
+        $(document).ready(function () {
+
+            var $grid = $('.isotope-box').isotope({
+                itemSelector: '.isotope-item',
+                layoutMode: 'fitRows'
+            });
+
+            // Mobil menü toggle
+            $('#menu-toggle').click(function (e) {
+                e.preventDefault();
+                $('#menu').toggleClass('active');
+                $('body').toggleClass('menu-open');
+            });
+
+            $('#menu-close').click(function (e) {
+                e.preventDefault();
+                $('#menu').removeClass('active');
+                $('body').removeClass('menu-open');
+            });
+
+            // Dış tıklama ile menü kapatma
+            $(document).click(function (e) {
+                if ($(window).width() < 992) {
+                    if (!$('#menu').is(e.target) && $('#menu').has(e.target).length === 0 && !$('#menu-toggle').is(e.target)) {
+                        $('#menu').removeClass('active');
+                        $('body').removeClass('menu-open');
+                    }
+                }
+            });
+
+            // WhatsApp yönlendirme
+            $('#whatsapp-toggle').click(function () {
+                window.open('https://wa.me/905319583445', '_blank');
+            });
+
+            // Filtre değiştiğinde
+            $('.isotope-toolbar input').change(function () {
+                var filterValue = $(this).data('type');
+                $grid.isotope({ filter: filterValue === '*' ? '*' : '[data-type="' + filterValue + '"]' });
+            });
+
+            // Aktif menü takibi
+            $(".main-menu li:first").addClass("active");
+
+            function showSection(section, animate) {
+                var id = section.replace('#', '');
+                var $section = $('.section[data-section="' + id + '"]');
+                var pos = $section.offset().top;
+                if (animate) {
+                    $('html, body').animate({ scrollTop: pos }, 800);
+                } else {
+                    window.scrollTo(0, pos);
+                }
+            }
+
+            function checkSection() {
+                $('.section').each(function () {
+                    var $this = $(this);
+                    var top = $this.offset().top - 80;
+                    var bottom = top + $this.outerHeight();
+                    var scroll = $(window).scrollTop();
+                    if (scroll >= top && scroll <= bottom) {
+                        var id = $this.data('section');
+                        $('a[href="#' + id + '"]').closest('li').addClass('active').siblings().removeClass('active');
+                    }
+                });
+            }
+
+            $('.main-menu a').click(function (e) {
+                e.preventDefault();
+                showSection($(this).attr('href'), true);
+            });
+
+            $(window).scroll(checkSection);
+
+            // Yeniden boyutlandırma
+            $(window).resize(function () {
+                if ($(window).width() >= 992) {
+                    $('#menu').removeClass('active');
+                    $('body').removeClass('menu-open');
+                }
+                $grid.isotope('layout');
+            });
+        });
+    </script>
+
 </body>
+
 </html>
